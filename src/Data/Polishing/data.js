@@ -95,18 +95,7 @@ export const packagesData = {
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
-    {
-      type: "PAINT CORRECTION",
-      price: "From £450",
-      features: [
-        { description: "Tailored paint correction solutions based on the condition of your vehicle and desired finish." },
-        { description: "Commonly chosen before ceramic coating to maximise gloss, clarity, and bonding quality." },
-      ],
-      btnText: "Enquire About Paint Correction",
-      iconColor: "#0FB981",
-      bgColor: "#0FB98120",
-      borderColor: "#0FB98130",
-    },
+   
   ]
 };
 
