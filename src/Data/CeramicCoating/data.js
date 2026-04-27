@@ -1,14 +1,14 @@
-// data.js updated with Ceramic Coating Service
+﻿// data.js updated with Ceramic Coating Service
 
 export const serviceBannerData = {
   title: "Professional Ceramic Coating",
-  description: "Long-lasting gloss, superior protection, and easier maintenance. Our professional ceramic coating services provide durable protection for your vehicle’s paintwork. At Crystal Clean, we apply high-quality coatings from our Okehampton studio for vehicles across Devon.",
+  description: "Long-lasting gloss, superior protection, and easier maintenance. Our professional ceramic coating services provide durable protection for your vehicle's paintwork. At Crystal Clean, we apply high-quality coatings from our Okehampton studio for vehicles across Devon.",
   thumbnailImage: "c1.png",
 };
 
 export const serviceDetailData = {
   mainTitle: "Professional Ceramic Coating Application",
-  mainDescription: "Ceramic coating is an advanced liquid polymer applied to your vehicle’s paintwork, forming a durable protective layer. Once cured, it bonds with the surface to provide enhanced gloss, hydrophobic properties, and long-term resistance against environmental contaminants.",
+  mainDescription: "Ceramic coating is an advanced liquid polymer applied to your vehicle's paintwork, forming a durable protective layer. Once cured, it bonds with the surface to provide enhanced gloss, hydrophobic properties, and long-term resistance against environmental contaminants.",
   subDesc: "Our application process is carried out in controlled indoor conditions to ensure proper curing and flawless results. Every coating package includes thorough surface preparation to maximise bonding and longevity.",
 
   benefits: {
@@ -28,7 +28,7 @@ export const serviceDetailData = {
       },
       {
         heading: "Long-Term Investment Protection",
-        text: "Protect your vehicle’s value by shielding it from UV rays, oxidation, bird droppings, and light chemical exposure."
+        text: "Protect your vehicle's value by shielding it from UV rays, oxidation, bird droppings, and light chemical exposure."
       }
     ]
   },
@@ -57,8 +57,8 @@ export const serviceDetailData = {
 };
 
 export const packagesData = {
-detail: { // Changed from array [] to object {}
-    title: "Discover Our Ceramic Coating Packages", 
+  detail: {
+    title: "Discover Our Ceramic Coating Packages",
     desc: "Long-Term Protection Solutions"
   },
   contactLinks: [
@@ -66,11 +66,11 @@ detail: { // Changed from array [] to object {}
     { icon: "Mail", title: "crystal.cl34n@gmail.com", href: "mailto:crystal.cl34n@gmail.com" },
     { icon: "MapPin", title: "Unit 1B Cranmere Rd, Okehampton EX20 1UE", href: "https://maps.google.com" },
   ],
-  
+
   packages: [
     {
       type: "1 YEAR CERAMIC COATING",
-      price: "£200",
+      price: "£250",
       features: [
         { description: "Full exterior preparation" },
         { description: "Professional ceramic application" },
@@ -83,8 +83,20 @@ detail: { // Changed from array [] to object {}
       borderColor: "#0FB98130",
     },
     {
-      type: "3 YEAR CERAMIC COATING",
+      type: "2 YEAR CERAMIC COATING",
       price: "£350",
+      features: [
+        { description: "Enhanced paint protection with durable gloss and water-repellent performance." },
+        { description: "A strong option for drivers wanting more longevity than entry-level coating packages." },
+      ],
+      btnText: "Enquire About 2 Year Coating",
+      iconColor: "#0FB981",
+      bgColor: "#0FB98120",
+      borderColor: "#0FB98130",
+    },
+    {
+      type: "3 YEAR CERAMIC COATING",
+      price: "£450",
       features: [
         { description: "Advanced surface preparation" },
         { description: "Professional coating application" },
@@ -98,7 +110,7 @@ detail: { // Changed from array [] to object {}
     },
     {
       type: "5 YEAR CERAMIC COATING",
-      price: "£500",
+      price: "£650",
       features: [
         { description: "Premium long-term protection" },
         { description: "Extended durability and superior gloss retention" },
@@ -111,7 +123,7 @@ detail: { // Changed from array [] to object {}
     },
     {
       type: "10 YEAR CERAMIC COATING",
-      price: "£800",
+      price: "£850",
       features: [
         { description: "Maximum protection and durability" },
         { description: "Designed for long-term ownership" },
@@ -124,3 +136,4 @@ detail: { // Changed from array [] to object {}
     },
   ]
 };
+
