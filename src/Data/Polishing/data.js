@@ -1,15 +1,15 @@
-// data.js updated with Polishing & Paint Correction Service
+﻿// data.js updated with Polishing & Paint Correction Service
 
 export const serviceBannerData = {
   title: "Professional Polishing & Paint Correction",
-  description: "Enhance your vehicle’s gloss, remove imperfections, and restore depth to your paintwork with our professional polishing services. At Crystal Clean, we specialise in safe paint enhancement and correction for vehicles across Okehampton and surrounding Devon.",
+  description: "Enhance your vehicle's gloss, remove imperfections, and restore depth to your paintwork with our professional polishing services. At Crystal Clean, we specialise in safe paint enhancement and correction for vehicles across Okehampton and surrounding Devon.",
   thumbnailImage: "p1.png",
 };
 
 export const serviceDetailData = {
   mainTitle: "Professional Paint Enhancement & Correction",
-  mainDescription: "Over time, your vehicle’s paint can develop swirl marks, light scratches, oxidation, and dullness. Our machine polishing and paint correction services safely restore clarity and gloss while preserving the integrity of your paint.",
-  subDesc: "Using professional-grade compounds, polishing pads, and precision techniques, we tailor each service to your vehicle’s condition, whether it requires a light enhancement or more intensive correction. Our services are available at our fully equipped indoor studio, ensuring perfect lighting and weather-controlled conditions for the best possible results.",
+  mainDescription: "Over time, your vehicle's paint can develop swirl marks, light scratches, oxidation, and dullness. Our machine polishing and paint correction services safely restore clarity and gloss while preserving the integrity of your paint.",
+  subDesc: "Using professional-grade compounds, polishing pads, and precision techniques, we tailor each service to your vehicle's condition, whether it requires a light enhancement or more intensive correction. Our services are available at our fully equipped indoor studio, ensuring perfect lighting and weather-controlled conditions for the best possible results.",
 
   benefits: {
     title: "When You Need Polishing",
@@ -38,7 +38,7 @@ export const serviceDetailData = {
     steps: [
       {
         heading: "Book a Paint Assessment",
-        text: "Contact us to discuss your vehicle’s condition and desired finish."
+        text: "Contact us to discuss your vehicle's condition and desired finish."
       },
       {
         heading: "Vehicle Inspection",
@@ -71,41 +71,31 @@ export const packagesData = {
 
   packages: [
     {
-      type: "STAGE 1 POLISH",
-      price: "£150",
+      type: "STAGE 1 ENHANCEMENT POLISH",
+      price: "From £220",
       features: [
-        { description: "Single-stage machine polish designed to enhance gloss and remove light swirl marks and minor imperfections." },
-        { description: "Ideal for vehicles with light wash marks, minor surface scratches, and slight dullness." },
+        { description: "Single-stage machine polish focused on boosting gloss and improving the overall finish." },
+        { description: "Well suited to vehicles with light swirl marks, wash marring, and tired-looking paint." },
       ],
-      btnText: "Book Stage 1 Polish",
+      btnText: "Book Stage 1 Enhancement",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
     {
-      type: "STAGE 2 POLISH",
-      price: "£250",
+      type: "STAGE 2 PAINT CORRECTION",
+      price: "From £450",
       features: [
-        { description: "Two-stage machine correction process targeting deeper swirl marks and more visible paint defects." },
-        { description: "Includes compound correction stage and refinement polishing stage for significant gloss enhancement." },
-        { description: "Recommended for vehicles with moderate imperfections requiring a higher level of correction." },
+        { description: "A more involved correction service aimed at removing deeper swirl marks and visible defects." },
+        { description: "Includes correction and refining stages to improve clarity, depth, and overall paint finish." },
+        { description: "Recommended for vehicles needing a higher level of restoration before protection is applied." },
       ],
-      btnText: "Book Stage 2 Polish",
+      btnText: "Book Stage 2 Correction",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
-    {
-      type: "PAINT CORRECTION",
-      price: "Custom / Add-On",
-      features: [
-        { description: "Tailored paint correction solutions based on individual vehicle condition." },
-        { description: "Recommended before ceramic coating application to ensure maximum finish quality." },
-      ],
-      btnText: "Enquire About Paint Correction",
-      iconColor: "#0FB981",
-      bgColor: "#0FB98120",
-      borderColor: "#0FB98130",
-    },
+   
   ]
 };
+

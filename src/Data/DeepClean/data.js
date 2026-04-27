@@ -1,4 +1,4 @@
-// data.js updated with Deep Clean & Valeting Service
+﻿// data.js updated with Deep Clean & Valeting Service
 
 export const serviceBannerData = {
   title: "Deep Clean & Valeting Services",
@@ -16,7 +16,7 @@ export const serviceDetailData = {
     items: [
       {
         heading: "Exterior Looking Dull or Dirty",
-        text: "Road grime, brake dust, and environmental contamination are reducing your vehicle’s shine."
+        text: "Road grime, brake dust, and environmental contamination are reducing your vehicle's shine."
       },
       {
         heading: "Interior Needs Refreshing",
@@ -28,7 +28,7 @@ export const serviceDetailData = {
       },
       {
         heading: "Regular Maintenance",
-        text: "You want to protect your vehicle’s condition and keep it looking its best all year round."
+        text: "You want to protect your vehicle's condition and keep it looking its best all year round."
       }
     ]
   },
@@ -71,23 +71,11 @@ export const packagesData = {
 
   packages: [
     {
-      type: "EXTERIOR WASH",
-      price: "£40",
-      features: [
-        { description: "Premium exterior wash using PH-neutral products (safe for ceramic coated vehicles)." },
-        { description: "Safe hand wash, wheel cleaning, tyre dressing, fuel cap cleaning, door seal wipe-down." },
-      ],
-      btnText: "Book Exterior Wash",
-      iconColor: "#0FB981",
-      bgColor: "#0FB98120",
-      borderColor: "#0FB98130",
-    },
-    {
       type: "FULL VALET",
-      price: "£75",
+      price: "From £90",
       features: [
-        { description: "Complete interior and exterior clean for a refreshed vehicle." },
-        { description: "Includes exterior wash, interior hoover, rubbish removal, window cleaning, wheel cleaning." },
+        { description: "A complete interior and exterior valet to refresh your vehicle from top to bottom." },
+        { description: "Ideal for customers wanting a thorough all-round clean with professional finishing touches." },
       ],
       btnText: "Book Full Valet",
       iconColor: "#0FB981",
@@ -95,28 +83,89 @@ export const packagesData = {
       borderColor: "#0FB98130",
     },
     {
-      type: "DEEP FULL VALET",
-      price: "£120",
+      type: "INTERIOR ONLY",
+      price: "From £55",
       features: [
-        { description: "Our most comprehensive cleaning package." },
-        { description: "Includes everything in Full Valet plus tar removal, seat shampoo, mat shampoo, plastic deep clean, air vent detailing, under boot cleaning." },
+        { description: "Focused interior deep clean for seats, carpets, trims, plastics, and glass." },
+        { description: "A great option when the cabin needs a professional refresh without an exterior package." },
       ],
-      btnText: "Book Deep Full Valet",
+      btnText: "Book Interior Only",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
     {
-      type: "ENGINE BAY CLEANING (Add-On)",
-      price: "£40",
+      type: "EXTERIOR ONLY",
+      price: "From £55",
       features: [
-        { description: "Safely detail your engine bay using steam or foam methods depending on individual requirements." },
-        { description: "A careful and professional clean, not just a rinse." },
+        { description: "Safe exterior wash designed to lift grime and restore gloss without harming protected paintwork." },
+        { description: "Perfect for vehicles that need an exterior refresh, wheel clean, and finishing detail." },
       ],
-      btnText: "Add Engine Bay Cleaning",
+      btnText: "Book Exterior Only",
+      iconColor: "#0FB981",
+      bgColor: "#0FB98120",
+      borderColor: "#0FB98130",
+    },
+    {
+      type: "DEEP CLEAN / FULL RESET DETAIL",
+      price: "From £180",
+      features: [
+        { description: "A more intensive full-vehicle reset for heavily used or neglected vehicles needing extra attention." },
+        { description: "Suitable when stains, embedded dirt, and neglected surfaces require a more detailed restoration clean." },
+      ],
+      btnText: "Book Deep Clean",
+      iconColor: "#0FB981",
+      bgColor: "#0FB98120",
+      borderColor: "#0FB98130",
+    },
+    {
+      type: "SIGN WRITING REMOVAL - SMALL VAN",
+      price: "£120",
+      features: [
+        { description: "Professional removal of sign writing and adhesive residue from small vans." },
+        { description: "Helps restore a cleaner finish before sale, rebranding, or private use." },
+      ],
+      btnText: "Book Small Van Removal",
+      iconColor: "#0FB981",
+      bgColor: "#0FB98120",
+      borderColor: "#0FB98130",
+    },
+    {
+      type: "SIGN WRITING REMOVAL - MEDIUM VAN",
+      price: "£180",
+      features: [
+        { description: "Safe sign writing removal process for medium vans with careful adhesive cleanup." },
+        { description: "Designed to minimise residue and improve panel appearance after graphics removal." },
+      ],
+      btnText: "Book Medium Van Removal",
+      iconColor: "#0FB981",
+      bgColor: "#0FB98120",
+      borderColor: "#0FB98130",
+    },
+    {
+      type: "SIGN WRITING REMOVAL - LARGE VAN",
+      price: "£280",
+      features: [
+        { description: "Suitable for larger vans that require more time and surface coverage during removal." },
+        { description: "Includes removal of vinyl graphics and adhesive residue from large vehicle panels." },
+      ],
+      btnText: "Book Large Van Removal",
+      iconColor: "#0FB981",
+      bgColor: "#0FB98120",
+      borderColor: "#0FB98130",
+    },
+    {
+      type: "MONTHLY MAINTENANCE",
+      price: "From £60 - £80",
+      features: [
+        { description: "Routine upkeep package to keep your vehicle consistently clean and well presented." },
+        { description: "Best suited to regular customers who want their vehicle maintained between larger details." },
+      ],
+      btnText: "Book Monthly Maintenance",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
   ]
 };
+
