@@ -110,7 +110,7 @@ export default function Navbar() {
             Why Choose
           </HashLink>
 
-          <HashLink to="/gallery" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
+          <HashLink to="/#gallery" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
             Gallery
           </HashLink>
 
@@ -181,7 +181,7 @@ export default function Navbar() {
               )}
             </div>
 
-            <HashLink to="/gallery" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>
+            <HashLink to="/#gallery" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>
               Gallery
             </HashLink>
 

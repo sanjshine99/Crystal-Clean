@@ -89,7 +89,7 @@ const HeroSection = () => {
           </div>
 
           {/* RIGHT IMAGE */}
-          <div className="relative w-full hidden lg:block" data-aos="fade-left" data-aos-duration="1200">
+          <div className="relative w-full block" data-aos="fade-left" data-aos-duration="1200">
             <div className="aspect-video sm:aspect-4/3 w-full relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
               <img
                 src="/lotus.jpeg"

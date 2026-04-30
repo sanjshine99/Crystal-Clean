@@ -183,7 +183,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <HashLink to="/gallery" className="block text-xl font-bold text-[#0E0E0E] dark:text-white" onClick={handleMobileMenuClick}>
+          <HashLink to="/#gallery" className="block text-xl font-bold text-[#0E0E0E] dark:text-white" onClick={handleMobileMenuClick}>
             Gallery
           </HashLink>
 
