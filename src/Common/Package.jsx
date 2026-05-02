@@ -193,7 +193,7 @@ export default function Package({ data }) {
     const { contactLinks, packages, detail } = data;
     const displayDetail = Array.isArray(detail) ? detail[0] : detail;
 
-    const allServices = ["Paint Protection Film Installation", "Ceramic Coating", "Polishing", "Deep Clean"];
+    const allServices = ["Paint Protection Film Installation", "Ceramic Coating", "Polishing", "Car Detailing"];
 
     const openModal = (pkgType) => {
         setSelectedPackage(pkgType);

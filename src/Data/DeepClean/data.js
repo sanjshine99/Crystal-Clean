@@ -1,34 +1,36 @@
-﻿// data.js updated with Deep Clean & Valeting Service
+﻿// data.js updated with Expert Detailing & Paint Care
 
 export const serviceBannerData = {
-  title: "Deep Clean & Valeting Services",
-  description: "Restore your vehicle inside and out with our professional deep cleaning services. From a safe exterior wash to a full interior transformation, Crystal Clean delivers premium results at our Okehampton studio or via our fully equipped mobile service across Devon.",
+  title: "Professional Car Detailing Services",
+  description: "Enhance, protect, and restore your vehicle with our professional detailing services.",
+  desc1: "From precision exterior correction to meticulous interior refinement, we deliver showroom-quality results.",
+  desc2: "Available at our studio or through our fully equipped mobile service.",
   thumbnailImage: "d.png",
 };
 
 export const serviceDetailData = {
-  mainTitle: "Professional Deep Cleaning & Valeting",
-  mainDescription: "Our Deep Clean services are designed to thoroughly refresh, protect, and maintain your vehicle. Whether you need a quick exterior refresh or a complete interior and exterior transformation, we use professional-grade products, PH-neutral solutions (safe for ceramic coated vehicles), and proven detailing techniques.",
-  subDesc: "We are fully self-sufficient for mobile detailing with no water or power required and our indoor studio ensures year-round service regardless of weather.",
+  mainTitle: "Expert Detailing & Paint Care",
+  mainDescription: "Our detailing services go beyond standard cleaning—focusing on correction, protection, and long-term preservation of your vehicle. Whether it’s restoring paint clarity, enhancing gloss, or deep interior detailing, we use industry-grade products, safe techniques, and meticulous attention to detail.",
+  subDesc: "We use pH-neutral products suitable for ceramic-coated vehicles. Our mobile setup is fully self-sufficient with no need for water or electricity, while our indoor studio allows us to deliver consistent, high-quality results in all weather conditions.",
 
   benefits: {
-    title: "When You Need a Deep Clean",
+    title: "When You Need Professional Detailing",
     items: [
       {
-        heading: "Exterior Looking Dull or Dirty",
-        text: "Road grime, brake dust, and environmental contamination are reducing your vehicle's shine."
+        heading: "Paintwork Looks Swirled or Faded",
+        text: "Swirl marks, light scratches, and dull paint reduce your vehicle’s overall appearance and depth."
       },
       {
-        heading: "Interior Needs Refreshing",
-        text: "Seats, carpets, and plastics have built-up dirt, stains, or odours that need professional attention."
+        heading: "Interior Requires Deep Restoration",
+        text: "Embedded dirt, stains, and odours need more than a basic clean to fully restore the cabin to showroom condition."
       },
       {
-        heading: "Preparing for Sale",
-        text: "A professional valet increases resale value and makes a strong first impression."
+        heading: "Protecting Your Investment",
+        text: "Detailing helps preserve your vehicle’s resale value by maintaining both the interior and exterior in peak condition."
       },
       {
-        heading: "Regular Maintenance",
-        text: "You want to protect your vehicle's condition and keep it looking its best all year round."
+        heading: "Showroom Finish Goals",
+        text: "When you want your vehicle to stand out with a deep gloss, enhanced finish, and flawless presentation."
       }
     ]
   },
@@ -37,20 +39,20 @@ export const serviceDetailData = {
     title: "How It Works",
     steps: [
       {
-        heading: "Request Your Booking",
-        text: "Contact us by phone or WhatsApp to choose the valet package that suits your vehicle."
+        heading: "Book Your Detail",
+        text: "Contact us via phone or WhatsApp to select the detailing package that fits your vehicle's specific needs."
       },
       {
-        heading: "Mobile or Studio Appointment",
-        text: "We arrive fully equipped at your location or welcome you to our Okehampton unit."
+        heading: "Choose Your Location",
+        text: "Visit our professional studio in Okehampton or book our fully equipped mobile detailing service at your home or work."
       },
       {
-        heading: "Professional Deep Cleaning",
-        text: "We carry out a thorough, safe, and detailed cleaning process tailored to your chosen package."
+        heading: "Precision Detailing Process",
+        text: "We carry out a thorough, multi-stage detailing process tailored to your vehicle using advanced methods."
       },
       {
         heading: "Final Inspection & Finish",
-        text: "We complete a quality check to ensure your vehicle leaves looking fresh, clean, and revitalised."
+        text: "Every detail is checked against our high standards to ensure a flawless finish before the final handover."
       }
     ]
   }
@@ -59,8 +61,8 @@ export const serviceDetailData = {
 export const packagesData = {
   detail: [
     {
-      title: "Discover Our Complete Deep Clean Packages",
-      desc: "Essential Valeting Services"
+      title: "Premium Detailing Packages",
+      desc: "Professional Grade Restoration & Protection"
     }
   ],
   contactLinks: [
@@ -71,49 +73,50 @@ export const packagesData = {
 
   packages: [
     {
-      type: "FULL VALET",
+      type: "Car Detailing ",
       price: "From £90",
       features: [
-        { description: "A complete interior and exterior valet to refresh your vehicle from top to bottom." },
-        { description: "Ideal for customers wanting a thorough all-round clean with professional finishing touches." },
+        { description: "A complete interior and exterior refresh to restore your vehicle from top to bottom." },
+        { description: "Combines thorough deep cleaning with professional finishing touches for a showroom feel." },
       ],
-      btnText: "Book Full Valet",
+      btnText: "Book Full Detail",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
     {
-      type: "INTERIOR ONLY",
+      type: "INTERIOR REFINEMENT",
       price: "From £55",
       features: [
-        { description: "Focused interior deep clean for seats, carpets, trims, plastics, and glass." },
-        { description: "A great option when the cabin needs a professional refresh without an exterior package." },
+        { description: "Meticulous deep clean for seats, carpets, trims, and glass using safe restoration products." },
+        { description: "Includes odour neutralisation and deep stain removal for a professional cabin refresh." },
       ],
-      btnText: "Book Interior Only",
+      btnText: "Book Interior Detail",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
     {
-      type: "EXTERIOR ONLY",
+      type: "EXTERIOR GLOSS ENHANCEMENT",
       price: "From £55",
       features: [
-        { description: "Safe exterior wash designed to lift grime and restore gloss without harming protected paintwork." },
-        { description: "Perfect for vehicles that need an exterior refresh, wheel clean, and finishing detail." },
+        { description: "Precision exterior wash using pH-neutral foam to lift grime without harming paint protection." },
+        { description: "Deep wheel cleaning and chemical decontamination to restore clarity and gloss." },
       ],
-      btnText: "Book Exterior Only",
+      btnText: "Book Exterior Detail",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
     {
-      type: "DEEP CLEAN / FULL RESET DETAIL",
+      type: "FULL RESET DETAIL",
       price: "From £180",
       features: [
-        { description: "A more intensive full-vehicle reset for heavily used or neglected vehicles needing extra attention." },
-        { description: "Suitable when stains, embedded dirt, and neglected surfaces require a more detailed restoration clean." },
+        { description: "An intensive full-vehicle reset for neglected vehicles needing a complete restoration." },
+        { description: "Focused on removing embedded contamination and restoring surfaces to their highest potential." },
+        { description: "Studio-based service only." }, 
       ],
-      btnText: "Book Deep Clean",
+      btnText: "Book Reset Detail",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
@@ -122,8 +125,8 @@ export const packagesData = {
       type: "SIGN WRITING REMOVAL - SMALL VAN",
       price: "£120",
       features: [
-        { description: "Professional removal of sign writing and adhesive residue from small vans." },
-        { description: "Helps restore a cleaner finish before sale, rebranding, or private use." },
+        { description: "Professional removal of vinyl graphics and adhesive residue from small vans." },
+        { description: "Restores panel clarity before resale, rebranding, or private use." },
       ],
       btnText: "Book Small Van Removal",
       iconColor: "#0FB981",
@@ -134,8 +137,9 @@ export const packagesData = {
       type: "SIGN WRITING REMOVAL - MEDIUM VAN",
       price: "£180",
       features: [
-        { description: "Safe sign writing removal process for medium vans with careful adhesive cleanup." },
-        { description: "Designed to minimise residue and improve panel appearance after graphics removal." },
+        { description: "Safe adhesive removal process for medium vans ensuring no surface damage." },
+        { description: "Detailed paint cleanup after graphics removal to improve panel appearance." },
+             
       ],
       btnText: "Book Medium Van Removal",
       iconColor: "#0FB981",
@@ -146,8 +150,8 @@ export const packagesData = {
       type: "SIGN WRITING REMOVAL - LARGE VAN",
       price: "£280",
       features: [
-        { description: "Suitable for larger vans that require more time and surface coverage during removal." },
-        { description: "Includes removal of vinyl graphics and adhesive residue from large vehicle panels." },
+        { description: "Comprehensive removal for large-scale vehicle panels and commercial graphics." },
+        { description: "Full adhesive residue removal and surface preparation for the entire vehicle." },
       ],
       btnText: "Book Large Van Removal",
       iconColor: "#0FB981",
@@ -155,17 +159,16 @@ export const packagesData = {
       borderColor: "#0FB98130",
     },
     {
-      type: "MONTHLY MAINTENANCE",
+      type: "MAINTENANCE PLAN",
       price: "From £60 - £80",
       features: [
-        { description: "Routine upkeep package to keep your vehicle consistently clean and well presented." },
-        { description: "Best suited to regular customers who want their vehicle maintained between larger details." },
+        { description: "Routine upkeep package designed for vehicles that have previously been detailed." },
+        { description: "Ensures long-term protection and showroom finish is maintained throughout the year." },
       ],
-      btnText: "Book Monthly Maintenance",
+      btnText: "Book Maintenance",
       iconColor: "#0FB981",
       bgColor: "#0FB98120",
       borderColor: "#0FB98130",
     },
   ]
 };
-

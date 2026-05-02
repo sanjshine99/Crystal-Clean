@@ -12,7 +12,7 @@ export default function AboutSection() {
             
         >
           <img
-            src="/about.png"
+            src="/im5.jpeg"
             alt="Vehicle Detailing Professional"
             className="
               w-full
@@ -76,7 +76,7 @@ export default function AboutSection() {
               className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-6"
             
             >
-              We are a dedicated vehicle detailing company in Okehampton, offering professional-level cleaning, polishing, ceramic coating, and PPF services for cars, motorcycles, and caravans. 
+              We are a dedicated vehicle detailing company in Okehampton, offering professional level detailing, polishing, ceramic coating, and PPF services for cars, motorcycles, and caravans. 
             </p>
 
             <p 
