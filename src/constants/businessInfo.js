@@ -1,5 +1,5 @@
 import { Facebook, Instagram } from "lucide-react";
-import { FaTiktok } from "react-icons/fa";
+import { FaTiktok, FaYoutube } from "react-icons/fa";
 
 export const BUSINESS_DETAILS = {
     name: "Crystal Clean",
@@ -16,11 +16,10 @@ export const BUSINESS_DETAILS = {
     address: "Unit 1B Cranmere Rd, Okehampton EX20 1UE",
     mapsUrl: "https://maps.app.goo.gl/6q2xuZLGjxa7yGkr8",
     services: [
-        "Full Valet / Deep Clean",
-        "Machine Polishing",
+        "Car Detailing",
+        "Polishing",
         "Ceramic Coating",
         "PPF Installation",
-        "Mobile Detailing"
     ]
 };
 
@@ -39,5 +38,10 @@ export const SOCIAL_LINKS = [
         name: "TikTok",
         href: "https://www.tiktok.com/@crystal.cl34n",
         icon: FaTiktok,
+    },
+    {
+        name: "YouTube",
+        href: "https://www.youtube.com/@crystalcleandetail",
+        icon: FaYoutube,
     },
 ];

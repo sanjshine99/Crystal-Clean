@@ -2,7 +2,9 @@
 
 export const serviceBannerData = {
   title: "Professional Polishing & Paint Correction",
-  description: "Enhance your vehicle's gloss, remove imperfections, and restore depth to your paintwork with our professional polishing services. At Crystal Clean, we specialise in safe paint enhancement and correction for vehicles across Okehampton and surrounding Devon.",
+  description: "Enhance your vehicle's gloss, remove imperfections, and restore depth to your paintwork.",
+  desc1: "Our professional polishing services focus on safe paint enhancement and correction.",
+  desc2: "At Crystal Clean, we specialise in delivering refined, high-quality results for vehicles across Okehampton and surrounding Devon.",
   thumbnailImage: "p1.png",
 };
 

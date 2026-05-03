@@ -14,8 +14,8 @@ export default function ServiceSection() {
     const reasons = [
         {
             icon: FaSoap,
-            title: "Deep Clean",
-            desc: "Comprehensive exterior washes and full interior valets removing dirt, grime, and odours, restoring your vehicle to pristine condition.",
+            title: "Car Detailing",
+            desc: "Comprehensive exterior and interior Car Detailing removing dirt, grime and odours restoring your vehicle to a showroom condition.",
             color: "from-[#13AFFE] to-[#005bb5]",
             borderColor: "border-[#13AFFE]/30",
         },
@@ -65,26 +65,21 @@ export default function ServiceSection() {
                     </p>
                 </div>
 
-                {/* Main Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-
-                    {/* Featured Card (Left) */}
-                    <div className="md:col-span-2 md:row-span-2" data-aos="fade-right">
-                        <div className={`h-full bg-gray-50 dark:bg-[#1a1a1a] backdrop-blur-md border ${reasons[activeIndex].borderColor} rounded-3xl p-8 md:p-12 transition-all duration-500 shadow-xl`}>
-
-                            <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-linear-to-br ${reasons[activeIndex].color} mb-6 shadow-lg`}>
+                {/* Grid Structure Fix based on image_a47ee0.png */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+                    
+                    {/* Featured Large Card (Left) */}
+                    <div className="lg:col-span-2" data-aos="fade-right">
+                        <div className={`h-full bg-gray-50 dark:bg-[#1a1a1a] border ${reasons[activeIndex].borderColor} rounded-3xl p-8 md:p-12 transition-all duration-500 shadow-xl flex flex-col justify-center`}>
+                            <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${reasons[activeIndex].color} mb-6 shadow-lg`}>
                                 {React.createElement(reasons[activeIndex].icon, { className: "text-4xl text-white dark:text-[#0E0E0E]" })}
                             </div>
-
                             <h3 className="text-3xl md:text-5xl font-black mb-4 uppercase italic">
                                 {reasons[activeIndex].title}
                             </h3>
-
                             <p className="text-gray-600 dark:text-gray-300 text-xl leading-relaxed mb-8">
                                 {reasons[activeIndex].desc}
                             </p>
-
-                            {/* Progress Indicators */}
                             <div className="flex gap-3">
                                 {reasons.map((_, idx) => (
                                     <button
@@ -92,7 +87,7 @@ export default function ServiceSection() {
                                         onClick={() => setActiveIndex(idx)}
                                         className={`h-1.5 rounded-full transition-all duration-300 ${idx === activeIndex
                                                 ? "w-16 bg-[#13AFFE] dark:bg-[#F5A623]"
-                                                : "w-8 bg-gray-300 dark:bg-gray-700 hover:bg-[#13AFFE]/40"
+                                                : "w-8 bg-gray-300 dark:bg-gray-700"
                                             }`}
                                     />
                                 ))}
@@ -100,66 +95,38 @@ export default function ServiceSection() {
                         </div>
                     </div>
 
-                    {/* Side Cards (Right) */}
-                    <div className="space-y-6">
-                        {reasons.slice(0, 2).map((reason, idx) => {
-                            const Icon = reason.icon;
-                            return (
-                                <div
-                                    key={idx}
-                                    data-aos="fade-left"
-                                    onClick={() => setActiveIndex(idx)}
-                                    className={`cursor-pointer bg-gray-50 dark:bg-[#1a1a1a] border rounded-2xl p-6 transition-all duration-300 hover:scale-102 ${activeIndex === idx
-                                            ? "border-[#13AFFE] dark:border-[#F5A623] shadow-lg"
-                                            : "border-transparent"
-                                        }`}
-                                >
-                                    <div className={`w-12 h-12 rounded-xl bg-linear-to-br ${reason.color} flex items-center justify-center mb-4`}>
-                                        <Icon className="text-xl text-white dark:text-[#0E0E0E]" />
-                                    </div>
-                                    <h4 className="text-lg font-black mb-2 uppercase italic">{reason.title}</h4>
-                                    <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">{reason.desc}</p>
+                    {/* Secondary Cards Column - Stacked vertically to fill height */}
+                    <div className="grid grid-cols-1 gap-6">
+                        {reasons.map((reason, idx) => (
+                            <div
+                                key={idx}
+                                onClick={() => setActiveIndex(idx)}
+                                className={`cursor-pointer group bg-gray-50 dark:bg-[#1a1a1a] border rounded-2xl p-6 transition-all duration-300 flex items-start gap-4 ${activeIndex === idx
+                                        ? "border-[#13AFFE] dark:border-[#F5A623] shadow-lg"
+                                        : "border-transparent opacity-70 hover:opacity-100"
+                                    }`}
+                            >
+                                <div className={`shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${reason.color} flex items-center justify-center`}>
+                                    {React.createElement(reason.icon, { className: "text-xl text-white dark:text-[#0E0E0E]" })}
                                 </div>
-                            );
-                        })}
+                                <div>
+                                    <h4 className="text-md font-black uppercase italic leading-tight mb-1">{reason.title}</h4>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-2 italic font-medium">Click to view details</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
 
-                {/* Bottom Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-                    {reasons.slice(2).map((reason, idx) => {
-                        const Icon = reason.icon;
-                        const realIdx = idx + 2;
-                        return (
-                            <div
-                                key={realIdx}
-                                data-aos="fade-up"
-                                data-aos-delay={idx * 100}
-                                onClick={() => setActiveIndex(realIdx)}
-                                className={`cursor-pointer group bg-gray-50 dark:bg-[#1a1a1a] border rounded-2xl p-6 transition-all duration-300 hover:scale-105 ${activeIndex === realIdx
-                                        ? "border-[#13AFFE] dark:border-[#F5A623] shadow-lg"
-                                        : "border-transparent"
-                                    }`}
-                            >
-                                <div className={`w-14 h-14 rounded-xl bg-linear-to-br ${reason.color} flex items-center justify-center mb-4 group-hover:rotate-6 transition-transform shadow-md`}>
-                                    <Icon className="text-2xl text-white dark:text-[#0E0E0E]" />
-                                </div>
-                                <h4 className="text-lg font-black mb-2 uppercase italic">{reason.title}</h4>
-                                <p className="text-gray-500 dark:text-gray-400 text-sm line-clamp-2">{reason.desc}</p>
-                            </div>
-                        );
-                    })}
-                </div>
-
-                {/* Trust Badges */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6" data-aos="fade-up">
+                {/* Trust Badges - Lowered for better spacing */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-10 border-t border-gray-100 dark:border-gray-800" data-aos="fade-up">
                     {[
-                        { icon: FaShieldAlt, title: "100% Guaranteed", desc: "Quality work or your money back" },
+                        { icon: FaShieldAlt, title: "100% Guaranteed", desc: "Quality work and satisfaction guaranteed" },
                         { icon: FaStar, title: "5-Star Rated", desc: "Trusted by hundreds of customers" },
-                        { icon: FaCar, title: "Crystal Clean", desc: "Precision automotive care" }
+                        { icon: FaCar, title: "Crystal Clean", desc: "Driven by detail, defined by quality" }
                     ].map((badge, i) => (
-                        <div key={i} className="bg-gray-100 dark:bg-[#0E0E0E] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 text-center hover:bg-[#13AFFE]/5 transition-all group">
-                            <badge.icon className="text-4xl text-[#F5A623] group-hover:text-[#13AFFE] mx-auto mb-3 opacity-80 group-hover:scale-110 transition-all duration-300" />
+                        <div key={i} className="bg-gray-100 dark:bg-[#0E0E0E] border border-gray-200 dark:border-gray-800 rounded-2xl p-6 text-center group">
+                            <badge.icon className="text-4xl text-[#F5A623] group-hover:text-[#13AFFE] mx-auto mb-3 transition-all duration-300" />
                             <p className="font-black text-xl mb-1 uppercase tracking-tight">{badge.title}</p>
                             <p className="text-gray-500 dark:text-gray-500 text-sm font-medium">{badge.desc}</p>
                         </div>
