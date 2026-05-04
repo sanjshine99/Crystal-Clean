@@ -71,7 +71,7 @@ export default function ServiceSection() {
                     {/* Featured Large Card (Left) */}
                     <div className="lg:col-span-2" data-aos="fade-right">
                         <div className={`h-full bg-gray-50 dark:bg-[#1a1a1a] border ${reasons[activeIndex].borderColor} rounded-3xl p-8 md:p-12 transition-all duration-500 shadow-xl flex flex-col justify-center`}>
-                            <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${reasons[activeIndex].color} mb-6 shadow-lg`}>
+                            <div className={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-linear-to-br ${reasons[activeIndex].color} mb-6 shadow-lg`}>
                                 {React.createElement(reasons[activeIndex].icon, { className: "text-4xl text-white dark:text-[#0E0E0E]" })}
                             </div>
                             <h3 className="text-3xl md:text-5xl font-black mb-4 uppercase italic">
@@ -106,7 +106,7 @@ export default function ServiceSection() {
                                         : "border-transparent opacity-70 hover:opacity-100"
                                     }`}
                             >
-                                <div className={`shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${reason.color} flex items-center justify-center`}>
+                                <div className={`shrink-0 w-12 h-12 rounded-xl bg-linear-to-br ${reason.color} flex items-center justify-center`}>
                                     {React.createElement(reason.icon, { className: "text-xl text-white dark:text-[#0E0E0E]" })}
                                 </div>
                                 <div>
