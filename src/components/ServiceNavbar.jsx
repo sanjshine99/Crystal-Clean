@@ -45,7 +45,7 @@ export default function ServiceNavbar() {
     { name: "Paint Protection Film Installation", path: "/paint-protection-film-installation" },
     { name: "Ceramic Coating", path: "/ceramiccoating" },
     { name: "Polishing", path: "/polishing" },
-    { name: "Car Detailing", path: "/deepclean" },
+    { name: "Car Detailing", path: "/car-detailing" },
   ];
 
   const homeLinks = [

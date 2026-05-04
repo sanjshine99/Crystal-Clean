@@ -12,10 +12,10 @@ import Footer from "./components/FooterSection";
 
 import Polishing from "./page/Services/Polishing";
 import CeramicCoating from "./page/Services/CeramicCoating";
-import DeepClean from "./page/Services/DeepClean";
 import ScrollToHash from "./components/ScrollToHash";
 import PaintProtectionFilmInstallation from "./page/Services/PaintProtectionFilmInstallation";
 import ReviewPage from "./page/ReviewPage";
+import CarDetailing from "./page/Services/CarDetailing";
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
         <Route path="/paint-protection-film-installation" element={<PaintProtectionFilmInstallation /> }/>
         <Route path="/ceramiccoating" element={<CeramicCoating /> } />
         <Route path="/polishing" element={<Polishing /> } />
-        <Route path="/deepclean" element={<DeepClean />} />
+        <Route path="/car-detailing" element={<CarDetailing />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>

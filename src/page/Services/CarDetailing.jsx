@@ -9,11 +9,11 @@ import {
     packagesData,
     serviceBannerData,
     serviceDetailData, // Assuming you refactor this next
-} from '../../Data/DeepClean/data';
+} from '../../Data/CarDetailing/data';
 import ServiceNavbar from '../../components/ServiceNavbar';
 
 
-const DeepClean = () => {
+const CarDetailing = () => {
     return (
         <div className="bg-black">
             <ServiceNavbar />
@@ -24,4 +24,4 @@ const DeepClean = () => {
     );
 };
 
-export default DeepClean;
+export default CarDetailing;
