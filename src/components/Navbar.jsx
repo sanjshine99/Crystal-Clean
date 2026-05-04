@@ -40,7 +40,7 @@ export default function Navbar() {
 
   const services = [
     { name: "Paint Protection Film Installation", path: "/paint-protection-film-installation" },
-    { name: "Ceramic Coating", path: "/ceramiccoating" },
+    { name: "Ceramic Coating", path: "/ceramic-coating" },
     { name: "Polishing", path: "/polishing" },
     { name: "Car Detailing", path: "/car-detailing" },
   ];
