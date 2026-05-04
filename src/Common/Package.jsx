@@ -268,7 +268,7 @@ export default function Package({ data }) {
                                             >
                                                 <FiCheck size={14} />
                                             </div>
-                                            <p className="text-gray-600 dark:text-gray-300 text-sm">
+                                            <p className="text-gray-600 dark:text-white text-sm">
                                                 {feature.description}
                                             </p>
                                         </div>

@@ -10,13 +10,11 @@ import {
     serviceBannerData,
     serviceDetailData, // Assuming you refactor this next
 } from '../../Data/Polishing/data';
-import ServiceNavbar from '../../components/ServiceNavbar';
 
 
 const Polishing = () => {
     return (
         <div className="bg-black">
-            <ServiceNavbar />
             <ServiceBanner data={serviceBannerData} />
             <ServiceDetail data={serviceDetailData} />
             <Package data={packagesData}/>

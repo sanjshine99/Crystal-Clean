@@ -77,7 +77,7 @@ export default function ServiceSection() {
                             <h3 className="text-3xl md:text-5xl font-black mb-4 uppercase italic">
                                 {reasons[activeIndex].title}
                             </h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-xl leading-relaxed mb-8">
+                            <p className="text-gray-600 dark:text-white text-xl leading-relaxed mb-8">
                                 {reasons[activeIndex].desc}
                             </p>
                             <div className="flex gap-3">
@@ -87,7 +87,7 @@ export default function ServiceSection() {
                                         onClick={() => setActiveIndex(idx)}
                                         className={`h-1.5 rounded-full transition-all duration-300 ${idx === activeIndex
                                                 ? "w-16 bg-[#13AFFE] dark:bg-[#F5A623]"
-                                                : "w-8 bg-gray-300 dark:bg-gray-700"
+                                                : "w-8 bg-white dark:bg-gray-700"
                                             }`}
                                     />
                                 ))}

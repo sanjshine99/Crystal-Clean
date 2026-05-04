@@ -73,14 +73,14 @@ export default function AboutSection() {
             </h2>
 
             <p 
-              className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-6"
+              className="text-gray-600 dark:text-white text-base md:text-lg leading-relaxed mb-6"
             
             >
               We are a dedicated vehicle detailing company in Okehampton, offering professional level detailing, polishing, ceramic coating, and PPF services for cars, motorcycles, and caravans. 
             </p>
 
             <p 
-              className="text-gray-600 dark:text-gray-300 text-base md:text-lg leading-relaxed mb-8"
+              className="text-gray-600 dark:text-white text-base md:text-lg leading-relaxed mb-8"
              
             >
               Our team brings years of detailing experience, helping every vehicle look its absolute best, no matter its condition. Whether at our fully equipped studio or via our mobile detailing service, we deliver premium, results-driven care.

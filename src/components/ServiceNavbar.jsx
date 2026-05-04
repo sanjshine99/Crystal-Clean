@@ -100,9 +100,9 @@ export default function ServiceNavbar() {
             </button>
             {showHomeDropdown && (
               <div className="absolute left-0 top-full mt-4 bg-white dark:bg-[#1A1A1A] border border-gray-200 dark:border-white/10 rounded-xl shadow-2xl w-52 py-3 z-50 overflow-hidden">
-                <HashLink to="/#" className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowHomeDropdown(false)}>Main Home</HashLink>
+                <HashLink to="/#" className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowHomeDropdown(false)}>Main Home</HashLink>
                 {homeLinks.map((link, i) => (
-                  <HashLink key={i} to={link.path} className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowHomeDropdown(false)}>{link.name}</HashLink>
+                  <HashLink key={i} to={link.path} className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowHomeDropdown(false)}>{link.name}</HashLink>
                 ))}
               </div>
             )}
@@ -115,7 +115,7 @@ export default function ServiceNavbar() {
             {showDropdown && (
               <div className="absolute left-0 top-full mt-4 bg-white dark:bg-[#1A1A1A] border border-gray-200 dark:border-white/10 rounded-xl shadow-2xl w-60 py-3 z-50 overflow-hidden">
                 {services.map((item, index) => (
-                  <Link key={index} to={item.path} className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowDropdown(false)}>{item.name}</Link>
+                  <Link key={index} to={item.path} className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowDropdown(false)}>{item.name}</Link>
                 ))}
               </div>
             )}

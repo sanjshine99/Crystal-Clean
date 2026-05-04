@@ -50,10 +50,10 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl text-gray-100 font-medium" data-aos="fade-right" data-aos-delay="200">
-              Premium deep cleaning
+              Premium detailing
             </p>
 
-            <p className="text-lg text-gray-300 max-w-lg" data-aos="fade-right" data-aos-delay="400">
+            <p className="text-lg text-white max-w-lg" data-aos="fade-right" data-aos-delay="400">
               Crystal Clean is a premium detailing service covering Okehampton and surrounding areas of Devon, specialising in high quality full valets, paint correction, and ceramic coatings and PPF.
 
 With over 12 years' experience, the focus is on restoring, enhancing, and protecting vehicles to a professional, showroom level standard not just cleaning, but proper detailing.
@@ -62,7 +62,8 @@ With over 12 years' experience, the focus is on restoring, enhancing, and protec
             <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="600">
               <a
                 href="tel:+447446253967"
-                className="inline-flex items-center justify-center gap-2 text-sm bg-[#F5A623] text-white shadow-lg h-12 rounded-md px-8 font-bold transition-all duration-300 hover:scale-105 active:scale-95"
+                style={{ background: "#F5A623" }}
+                className="inline-flex items-center justify-center gap-2 text-sm text-white shadow-lg h-12 rounded-md px-8 font-bold transition-all duration-300 hover:scale-105 active:scale-95"
               >
                 <FaPhone className="h-4 w-4" />
                 Call Now

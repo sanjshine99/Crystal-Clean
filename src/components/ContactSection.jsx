@@ -183,7 +183,7 @@ export default function Contact() {
                       className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all duration-200 ${
                         selectedServices.includes(service) 
                         ? "bg-[#13AFFE] border-[#13AFFE] text-white shadow-lg" 
-                        : "bg-white dark:bg-[#0E0E0E] border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300"
+                        : "bg-white dark:bg-[#0E0E0E] border-gray-200 dark:border-white/10 text-gray-700"
                       }`}
                     >
                       <div className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${selectedServices.includes(service) ? "bg-white border-white" : "border-gray-400"}`}>

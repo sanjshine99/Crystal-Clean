@@ -10,13 +10,11 @@ import {
     serviceBannerData,
     serviceDetailData, // Assuming you refactor this next
 } from '../../Data/CarDetailing/data';
-import ServiceNavbar from '../../components/ServiceNavbar';
 
 
 const CarDetailing = () => {
     return (
         <div className="bg-black">
-            <ServiceNavbar />
             <ServiceBanner data={serviceBannerData} />
             <ServiceDetail data={serviceDetailData} />
             <Package data={packagesData}/>

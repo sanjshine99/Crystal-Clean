@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 // Import the social links from your separate file
 import { SOCIAL_LINKS } from "../constants/businessInfo";
 
 export default function Navbar() {
+  const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -16,12 +17,23 @@ export default function Navbar() {
 
   const dropdownRef = useRef(null);
   const homeDropdownRef = useRef(null);
+  const isHomePage = pathname === "/";
+  const useSolidNavbar = !isHomePage || scrolled;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+    setShowDropdown(false);
+    setShowHomeDropdown(false);
+    setMobileServicesOpen(false);
+    setMobileHomeOpen(false);
+    setScrolled(window.scrollY > 50);
+  }, [pathname]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -72,7 +84,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${useSolidNavbar
         ? "bg-white/90 dark:bg-[#0E0E0E]/90 backdrop-blur-md shadow-xl py-2 border-b border-gray-200 dark:border-white/10"
         : "bg-transparent py-5"
         }`}
@@ -92,7 +104,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav
-          className={`hidden xl:flex items-center gap-8 font-bold transition-colors ${scrolled ? "text-gray-800 dark:text-white" : "text-white"
+          className={`hidden xl:flex items-center gap-8 font-bold transition-colors ${useSolidNavbar ? "text-gray-800 dark:text-white" : "text-white"
             }`}
         >
           {/* Home Dropdown */}
@@ -109,7 +121,7 @@ export default function Navbar() {
               <div className="absolute left-0 top-full mt-4 bg-white dark:bg-[#1A1A1A] border border-gray-200 dark:border-white/10 rounded-xl shadow-2xl w-52 py-3 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2">
                 <HashLink
                   to="/#"
-                  className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
+                  className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
                   onClick={() => setShowHomeDropdown(false)}
                 >
                   Home
@@ -118,7 +130,7 @@ export default function Navbar() {
                   <HashLink
                     key={index}
                     to={item.path}
-                    className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
+                    className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
                     onClick={() => setShowHomeDropdown(false)}
                   >
                     {item.name}
@@ -144,7 +156,7 @@ export default function Navbar() {
                   <Link
                     key={index}
                     to={item.path}
-                    className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-gray-300 hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
+                    className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
                     onClick={() => setShowDropdown(false)}
                   >
                     {item.name}
@@ -167,7 +179,7 @@ export default function Navbar() {
 
         {/* Right Side Socials & CTA */}
         <div className="flex items-center gap-6">
-          <SocialIcons className={`hidden xl:flex ${scrolled ? "text-gray-800 dark:text-white" : "text-white"}`} />
+          <SocialIcons className={`hidden xl:flex ${useSolidNavbar ? "text-gray-800 dark:text-white" : "text-white"}`} />
 
           <div className="flex items-center gap-4">
             <ThemeToggle />
@@ -182,7 +194,7 @@ export default function Navbar() {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`xl:hidden p-2 rounded-lg transition-colors ${scrolled
+              className={`xl:hidden p-2 rounded-lg transition-colors ${useSolidNavbar
                 ? "text-[#0E0E0E] dark:text-white bg-gray-100 dark:bg-white/5"
                 : "text-white bg-white/10 backdrop-blur-md"
                 }`}

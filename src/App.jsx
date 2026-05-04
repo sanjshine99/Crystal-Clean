@@ -9,6 +9,7 @@ import GDPRConsent from "./components/GDPRButton";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./page/Home";
 import Footer from "./components/FooterSection";
+import Navbar from "./components/Navbar";
 
 import Polishing from "./page/Services/Polishing";
 import CeramicCoating from "./page/Services/CeramicCoating";
@@ -33,6 +34,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <ScrollToHash />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/review" element={<ReviewPage /> } />
