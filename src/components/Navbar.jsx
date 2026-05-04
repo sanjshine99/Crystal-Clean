@@ -43,11 +43,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white dark:bg-[#0E0E0E] shadow-xl py-2"
-          : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
+        ? "bg-white dark:bg-[#0E0E0E] shadow-xl py-2"
+        : "bg-transparent py-5"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo - Uses 'invert' to turn white logo black when scrolled on light mode */}
@@ -63,11 +62,10 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <nav
-          className={`hidden xl:flex items-center gap-8 font-bold transition-colors ${
-            scrolled
-              ? "text-[#0E0E0E] dark:text-white"
-              : "text-white" // Always white over the video
-          }`}
+          className={`hidden xl:flex items-center gap-8 font-bold transition-colors ${scrolled
+            ? "text-[#0E0E0E] dark:text-white"
+            : "text-white" // Always white over the video
+            }`}
         >
           <HashLink to="/#" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition">
             Home
@@ -110,6 +108,10 @@ export default function Navbar() {
             Why Choose
           </HashLink>
 
+          <HashLink to="/review" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition">
+            Review
+          </HashLink>
+
           <HashLink to="/#gallery" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition">
             Gallery
           </HashLink>
@@ -135,11 +137,10 @@ export default function Navbar() {
           {/* Mobile Toggle Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`xl:hidden p-2 rounded-md transition-colors ${
-              scrolled
-                ? "text-[#0E0E0E] dark:text-white"
-                : "text-white" // White over video
-            }`}
+            className={`xl:hidden p-2 rounded-md transition-colors ${scrolled
+              ? "text-[#0E0E0E] dark:text-white"
+              : "text-white" // White over video
+              }`}
           >
             {isOpen ? <FiX size={28} /> : <FiMenu size={28} />}
           </button>
@@ -182,6 +183,9 @@ export default function Navbar() {
               </div>
             )}
           </div>
+          <HashLink to="/review" className="block text-xl font-bold text-[#0E0E0E] dark:text-white" onClick={handleMobileMenuClick}>
+            Review
+          </HashLink>
 
           <HashLink to="/#gallery" className="block text-xl font-bold text-[#0E0E0E] dark:text-white" onClick={handleMobileMenuClick}>
             Gallery

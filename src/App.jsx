@@ -15,6 +15,8 @@ import CeramicCoating from "./page/Services/CeramicCoating";
 import DeepClean from "./page/Services/DeepClean";
 import ScrollToHash from "./components/ScrollToHash";
 import PaintProtectionFilmInstallation from "./page/Services/PaintProtectionFilmInstallation";
+import ReviewPage from "./page/ReviewPage";
+
 
 function App() {
   // 4. Initialize AOS globally
@@ -33,7 +35,7 @@ function App() {
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<Home />} />
-       
+        <Route path="/review" element={<ReviewPage /> } />
         <Route path="/paint-protection-film-installation" element={<PaintProtectionFilmInstallation /> }/>
         <Route path="/ceramiccoating" element={<CeramicCoating /> } />
         <Route path="/polishing" element={<Polishing /> } />

@@ -4,7 +4,7 @@ import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 
-export default function Navbar() {
+export default function ServiceNavbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -41,11 +41,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white/90 dark:bg-[#0E0E0E]/90 backdrop-blur-md shadow-xl py-2 border-b border-gray-200 dark:border-white/10"
-          : "bg-transparent py-5"
-      }`}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
+        ? "bg-white/90 dark:bg-[#0E0E0E]/90 backdrop-blur-md shadow-xl py-2 border-b border-gray-200 dark:border-white/10"
+        : "bg-transparent py-5"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo Section */}
@@ -54,20 +53,18 @@ export default function Navbar() {
             <img
               src="/logo-white.png"
               alt="Logo"
-              className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${
-                scrolled ? "dark:invert-0 invert" : "invert-0"
-              }`}
+              className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${scrolled ? "dark:invert-0 invert" : "invert-0"
+                }`}
             />
           </Link>
         </div>
 
         {/* Desktop Menu */}
         <nav
-          className={`hidden xl:flex items-center gap-8 font-bold transition-colors ${
-            scrolled
-              ? "text-gray-800 dark:text-white"
-              : "text-white" // High contrast for video background
-          }`}
+          className={`hidden xl:flex items-center gap-8 font-bold transition-colors ${scrolled
+            ? "text-gray-800 dark:text-white"
+            : "text-white" // High contrast for video background
+            }`}
         >
           <HashLink to="/#" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
             Home
@@ -110,6 +107,10 @@ export default function Navbar() {
             Why Choose
           </HashLink>
 
+          <HashLink to="/review" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
+            Review
+          </HashLink>
+
           <HashLink to="/#gallery" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
             Gallery
           </HashLink>
@@ -134,11 +135,10 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`xl:hidden p-2 rounded-lg transition-colors ${
-              scrolled
-                ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-white/5"
-                : "text-gray-900 bg-gray-100 backdrop-blur-md"
-            }`}
+            className={`xl:hidden p-2 rounded-lg transition-colors ${scrolled
+              ? "text-gray-900 dark:text-white bg-gray-100 dark:bg-white/5"
+              : "text-gray-900 bg-gray-100 backdrop-blur-md"
+              }`}
           >
             {isOpen ? <FiX size={26} /> : <FiMenu size={26} />}
           </button>
@@ -180,6 +180,9 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            <HashLink to="/review" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>
+              Review
+            </HashLink>
 
             <HashLink to="/#gallery" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>
               Gallery
