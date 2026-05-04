@@ -7,7 +7,7 @@ const HeroSection = () => {
       icon: <FaCar className="h-6 w-6 text-[#F5A623] group-hover:text-[#13AFFE] transition-colors duration-300" />,
     },
     {
-      title: "10+ Years Experience",
+      title: "12+ Years Experience",
       icon: <FaUserTie className="h-6 w-6 text-[#F5A623] group-hover:text-[#13AFFE] transition-colors duration-300" />,
     },
     {
@@ -50,11 +50,13 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-xl text-gray-100 font-medium" data-aos="fade-right" data-aos-delay="200">
-              "Premium Car Detailing
+              Premium deep cleaning
             </p>
 
             <p className="text-lg text-gray-300 max-w-lg" data-aos="fade-right" data-aos-delay="400">
-              Bring out the best in your vehicle with professional deep cleaning, polishing, ceramic coating, and PPF services in Okehampton and across Devon.
+              Crystal Clean is a premium detailing service covering Okehampton and surrounding areas of Devon, specialising in high quality full valets, paint correction, and ceramic coatings and PPF.
+
+With over 12 years' experience, the focus is on restoring, enhancing, and protecting vehicles to a professional, showroom level standard not just cleaning, but proper detailing.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="600">

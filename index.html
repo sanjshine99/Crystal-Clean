@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark"> <!-- Force dark class for Tailwind -->
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/logo.png" />
@@ -7,23 +7,21 @@
     <title>Crystal Clean</title>
 
     <style>
+      /* Force global dark mode styles */
+      :root {
+        color-scheme: dark; /* Signals to browser UI/scrollbars to stay dark */
+      }
 
-      /* Body text — warm classic serif */
       body {
         margin: 0;
         padding: 0;
-        background-color: #000;
-        color: #fff;
+        background-color: #000 !important; /* Absolute black as requested */
+        color: #fff !important;
         overflow-x: hidden;
+        font-family: 'Poppins', sans-serif; /* Global font requirement */
       }
 
-      /* Headings — luxury classic serif */
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+      h1, h2, h3, h4, h5, h6 {
         font-weight: 600;
         letter-spacing: 1px;
         text-transform: uppercase;

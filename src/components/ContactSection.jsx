@@ -1,10 +1,21 @@
 import { useRef, useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Check } from 'lucide-react';
 import { BUSINESS_DETAILS } from "../constants/businessInfo";
 
 export default function Contact() {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
+  
+  // State for the multi-choice checklist
+  const [selectedServices, setSelectedServices] = useState([]);
+
+  const toggleService = (service) => {
+    setSelectedServices(prev => 
+      prev.includes(service) 
+        ? prev.filter(s => s !== service) 
+        : [...prev, service]
+    );
+  };
 
   const contactInfo = [
     {
@@ -54,16 +65,30 @@ export default function Contact() {
 
   const sendWhatsApp = (e) => {
     e.preventDefault();
+    
+    if (selectedServices.length === 0) {
+      alert("Please select at least one service.");
+      return;
+    }
+
     setLoading(true);
     const form = new FormData(formRef.current);
 
-    const whatsappMessage = `*New Booking Enquiry*\n\nName: ${form.get("firstName")} ${form.get("lastName")}\nEmail: ${form.get("email")}\nService: ${form.get("service")}\nMessage: ${form.get("message")}`;
+    // Formatted WhatsApp Message
+    const whatsappMessage = `*New Booking Enquiry*
+\n*Name:* ${form.get("firstName")} ${form.get("lastName")}
+*Email:* ${form.get("email")}
+*Vehicle Make:* ${form.get("make")}
+*Vehicle Model:* ${form.get("model")}
+*Services:* ${selectedServices.join(", ")}
+*Message:* ${form.get("message")}`;
     
     const encodedMessage = encodeURIComponent(whatsappMessage);
     window.open(`https://wa.me/${BUSINESS_DETAILS.whatsappNumber}?text=${encodedMessage}`, "_blank");
     
     setLoading(false);
     formRef.current.reset();
+    setSelectedServices([]); // Clear the checklist after sending
   };
 
   return (
@@ -108,7 +133,7 @@ export default function Contact() {
 
           {/* Right - Contact Form */}
           <div className="bg-gray-50 dark:bg-[#161616] border border-gray-100 dark:border-white/5 rounded-3xl shadow-2xl p-8 md:p-10 relative overflow-hidden">
-            {/* Subtle Accent Background Decor */}
+            {/* Subtle Accent Decor */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-[#13AFFE]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
             
             <h3 className="text-xl font-black uppercase italic mb-8 text-[#0E0E0E] dark:text-white flex items-center gap-2">
@@ -117,6 +142,7 @@ export default function Contact() {
             </h3>
 
             <form ref={formRef} onSubmit={sendWhatsApp} className="space-y-5 relative z-10">
+              {/* Name Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-xs font-black uppercase tracking-widest mb-2 text-gray-500">First Name</label>
@@ -128,24 +154,51 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Email Field */}
               <div>
                 <label className="block text-xs font-black uppercase tracking-widest mb-2 text-gray-500">Email Address</label>
                 <input name="email" type="email" placeholder="john@example.com" required className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0E0E0E] border border-gray-200 dark:border-white/10 text-black dark:text-white focus:ring-2 focus:ring-[#13AFFE] outline-none transition-all" />
               </div>
 
-              <div>
-                <label className="block text-xs font-black uppercase tracking-widest mb-2 text-gray-500">Service Required</label>
-                <select name="service" required className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0E0E0E] border border-gray-200 dark:border-white/10 text-black dark:text-white focus:ring-2 focus:ring-[#13AFFE] outline-none transition-all appearance-none cursor-pointer">
-                  <option value="" disabled selected>Select a service...</option>
-                  {BUSINESS_DETAILS.services.map((service) => (
-                    <option key={service} value={service}>{service}</option>
-                  ))}
-                </select>
+              {/* Vehicle Detail Row (Separate Make & Model) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-xs font-black uppercase tracking-widest mb-2 text-gray-500">Vehicle Make</label>
+                  <input name="make" type="text" placeholder="e.g. BMW" required className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0E0E0E] border border-gray-200 dark:border-white/10 text-black dark:text-white focus:ring-2 focus:ring-[#13AFFE] outline-none transition-all" />
+                </div>
+                <div>
+                  <label className="block text-xs font-black uppercase tracking-widest mb-2 text-gray-500">Vehicle Model</label>
+                  <input name="model" type="text" placeholder="e.g. M3 Competition" required className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0E0E0E] border border-gray-200 dark:border-white/10 text-black dark:text-white focus:ring-2 focus:ring-[#13AFFE] outline-none transition-all" />
+                </div>
               </div>
 
+              {/* Multi-select Checklist for Services */}
+              <div>
+                <label className="block text-xs font-black uppercase tracking-widest mb-3 text-gray-500">Which services are you interested in?</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {BUSINESS_DETAILS.services.map((service) => (
+                    <div 
+                      key={service} 
+                      onClick={() => toggleService(service)}
+                      className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-all duration-200 ${
+                        selectedServices.includes(service) 
+                        ? "bg-[#13AFFE] border-[#13AFFE] text-white shadow-lg" 
+                        : "bg-white dark:bg-[#0E0E0E] border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300"
+                      }`}
+                    >
+                      <div className={`w-5 h-5 rounded flex items-center justify-center border transition-colors ${selectedServices.includes(service) ? "bg-white border-white" : "border-gray-400"}`}>
+                        {selectedServices.includes(service) && <Check className="w-3 h-3 text-[#13AFFE]" />}
+                      </div>
+                      <span className="text-sm font-bold">{service}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Message Field */}
               <div>
                 <label className="block text-xs font-black uppercase tracking-widest mb-2 text-gray-500">Message</label>
-                <textarea name="message" rows={4} placeholder="Vehicle make/model and preferred date..." required className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0E0E0E] border border-gray-200 dark:border-white/10 text-black dark:text-white focus:ring-2 focus:ring-[#13AFFE] outline-none transition-all resize-none"></textarea>
+                <textarea name="message" rows={4} placeholder="Vehicle condition or preferred booking dates..." required className="w-full px-4 py-3 rounded-xl bg-white dark:bg-[#0E0E0E] border border-gray-200 dark:border-white/10 text-black dark:text-white focus:ring-2 focus:ring-[#13AFFE] outline-none transition-all resize-none"></textarea>
               </div>
 
               <button

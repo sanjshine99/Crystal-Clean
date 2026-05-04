@@ -21,7 +21,7 @@ export default function Review() {
         setRating(starRating);
         setError('');
         setSubmitted(false);
-        if (starRating <= 3) {
+        if (starRating <= 4) {
             setShowReviewBox(true);
         } else {
             setShowReviewBox(false);
