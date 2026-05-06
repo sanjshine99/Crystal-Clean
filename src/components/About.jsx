@@ -1,7 +1,7 @@
 export default function AboutSection() {
   return (
     <section 
-      className="relative w-full bg-white dark:bg-[#0E0E0E] py-20 transition-colors duration-300" 
+      className="relative w-full bg-[#0E0E0E] py-20 transition-colors duration-300" 
       id="about"
     >
       <div className="relative max-w-7xl mx-auto px-4 md:px-0">
@@ -31,13 +31,11 @@ export default function AboutSection() {
         {/* TEXT BOX — OVERLAY ON DESKTOP */}
         <div
           className="
-            bg-[#F9F9F9] 
-            dark:bg-[#0E0E0E]
-            text-[#0E0E0E] 
-            dark:text-white
+            bg-[#0E0E0E]
+           text-white
             shadow-2xl
             w-full
-            border border-gray-100 dark:border-gray-800
+            border border-gray-800
 
             lg:absolute
             lg:top-1/2
@@ -61,7 +59,7 @@ export default function AboutSection() {
           "
         >
           {/* ACCENT BAR — Blue in Light, Yellow in Dark */}
-          <div className="hidden lg:block absolute left-0 top-0 h-full w-2 bg-[#13AFFE] dark:bg-[#F5A623]"></div>
+          <div className="hidden lg:block absolute left-0 top-0 h-full w-2 bg-[#F5A623]"></div>
 
           {/* CONTENT */}
           <div className="lg:ml-6 pt-10 sm:pt-0">
@@ -69,18 +67,18 @@ export default function AboutSection() {
               className="text-3xl md:text-4xl font-black text-[#13AFFE] uppercase leading-tight mb-6"
        
             >
-              ABOUT <span className="text-[#13AFFE] dark:text-[#F5A623]">CRYSTAL CLEAN</span>
+              ABOUT <span className="text-[#F5A623]">CRYSTAL CLEAN</span>
             </h2>
 
             <p 
-              className="text-gray-600 dark:text-white text-base md:text-lg leading-relaxed mb-6"
+              className="text-white text-base md:text-lg leading-relaxed mb-6"
             
             >
               We are a dedicated vehicle detailing company in Okehampton, offering professional level detailing, polishing, ceramic coating, and PPF services for cars, motorcycles, and caravans. 
             </p>
 
             <p 
-              className="text-gray-600 dark:text-white text-base md:text-lg leading-relaxed mb-8"
+              className="text-white text-base md:text-lg leading-relaxed mb-8"
              
             >
               Our team brings years of detailing experience, helping every vehicle look its absolute best, no matter its condition. Whether at our fully equipped studio or via our mobile detailing service, we deliver premium, results-driven care.
@@ -88,10 +86,10 @@ export default function AboutSection() {
 
             {/* Sub-Feature Highlight */}
             <div 
-              className="flex items-center gap-4 text-[#13AFFE] dark:text-[#F5A623] font-bold"
+              className="flex items-center gap-4 text-[#F5A623] font-bold"
            
             >
-               <span className="h-px w-8 bg-[#13AFFE] dark:bg-[#F5A623]"></span>
+               <span className="h-px w-8 bg-[#F5A623]"></span>
                <span>Devon's Premium Choice</span>
             </div>
           </div>
