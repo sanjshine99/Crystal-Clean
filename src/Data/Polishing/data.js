@@ -74,7 +74,7 @@ export const packagesData = {
   packages: [
     {
       type: "STAGE 1 ENHANCEMENT POLISH",
-      price: "From £220",
+      price: "From £150",
       features: [
         { description: "Single-stage machine polish focused on boosting gloss and improving the overall finish." },
         { description: "Well suited to vehicles with light swirl marks, wash marring, and tired-looking paint." },
@@ -86,7 +86,7 @@ export const packagesData = {
     },
     {
       type: "STAGE 2 PAINT CORRECTION",
-      price: "From £450",
+      price: "From £250",
       features: [
         { description: "A more involved correction service aimed at removing deeper swirl marks and visible defects." },
         { description: "Includes correction and refining stages to improve clarity, depth, and overall paint finish." },

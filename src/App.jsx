@@ -39,9 +39,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/review" element={<ReviewPage /> } />
         <Route path="/paint-protection-film-installation" element={<PaintProtectionFilmInstallation /> }/>
-        <Route path="/ceramic-coating" element={<CeramicCoating /> } />
-        <Route path="/polishing" element={<Polishing /> } />
-        <Route path="/car-detailing" element={<CarDetailing />} />
+        <Route path="/ceramic-coatings-exeter" element={<CeramicCoating /> } />
+        <Route path="/paint-correction-exeter" element={<Polishing /> } />
+        <Route path="/car-detailing-exeter" element={<CarDetailing />} />
         <Route path="/terms" element={<TermsConditions />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>

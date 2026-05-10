@@ -54,7 +54,7 @@ const HeroSection = () => {
             </p>
 
             <p className="text-lg text-white max-w-lg" data-aos="fade-right" data-aos-delay="400">
-              Crystal Clean is a premium detailing service covering Okehampton and surrounding areas of Devon, specialising in high quality full valets, paint correction, and ceramic coatings and PPF.
+              Crystal Clean is a Premium vehicle detailing in Devon Paint Correction, Ceramic Coating, PPF & Professional valeting for our Okehampton studio and mobile service.
 
 With over 12 years' experience, the focus is on restoring, enhancing, and protecting vehicles to a professional, showroom level standard not just cleaning, but proper detailing.
             </p>
