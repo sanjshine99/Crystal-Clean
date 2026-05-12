@@ -25,7 +25,7 @@ export default function Review() {
             setShowReviewBox(true);
         } else {
             setShowReviewBox(false);
-            window.open("https://www.google.com/search?q=Crystal+clean+Reviews", "_blank", "noopener,noreferrer");
+            window.open("https://g.page/r/CYSKTm_brVBzEBM/review", "_blank", "noopener,noreferrer");
         }
     };
 
