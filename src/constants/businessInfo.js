@@ -16,7 +16,7 @@ export const BUSINESS_DETAILS = {
     address: "Unit 1B Cranmere Rd, Okehampton EX20 1UE",
     mapsUrl: "https://maps.app.goo.gl/6q2xuZLGjxa7yGkr8",
     services: [
-        "Car Detailing",
+        "Deep Valet",
         "Polishing",
         "Ceramic Coating",
         "PPF Installation",
