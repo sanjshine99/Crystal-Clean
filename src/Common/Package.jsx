@@ -10,20 +10,21 @@ const iconMap = {
 
 // ─── WhatsApp Quote Modal ───────────────────────────────────────────────────
 function QuoteModal({ isOpen, onClose, packageName, services }) {
-    const [form, setForm] = useState({
+    const createInitialForm = (serviceName = "") => ({
         name: "",
         phone: "",
-        service: packageName || "",
+        service: serviceName,
         date: "",
         time: "",
         info: "",
     });
 
+    const [form, setForm] = useState({
+        ...createInitialForm(packageName || ""),
+    });
+
     useEffect(() => {
-        setForm((prev) => ({
-            ...prev,
-            service: packageName || "",
-        }));
+        setForm(createInitialForm(packageName || ""));
     }, [packageName]);
 
     if (!isOpen) return null;
@@ -44,6 +45,8 @@ function QuoteModal({ isOpen, onClose, packageName, services }) {
 
         const encoded = encodeURIComponent(message);
         window.open(`https://wa.me/447446253967?text=${encoded}`, "_blank");
+        setForm(createInitialForm(packageName || ""));
+        onClose();
     };
 
     return (
@@ -211,7 +214,7 @@ export default function Package({ data }) {
         <>
             <section
                 id="package"
-                className="scroll-m-10 py-16 px-4 sm:px-6 lg:px-12 transition-colors duration-500 
+                className="scroll-m-10 py-10 px-4 sm:px-6 lg:px-12 transition-colors duration-500 
                 bg-linear-to-b from-gray-50 via-white to-gray-100 
                 dark:from-black dark:via-[#0b0b0b] dark:to-[#1a1a1a] 
                 text-black dark:text-white"

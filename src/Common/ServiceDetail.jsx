@@ -11,7 +11,7 @@ const ServiceDetail = ({ data }) => {
 
   return (
     /* Background flips between White and Black */
-    <section className="bg-white dark:bg-black py-16 md:py-24 transition-colors duration-500">
+    <section className="bg-white dark:bg-black py-10 transition-colors duration-500">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Section */}
