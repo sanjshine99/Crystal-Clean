@@ -5,7 +5,8 @@ export const serviceBannerData = {
   description: "Long-lasting gloss, superior protection, and easier maintenance.",
   desc1: "Our professional ceramic coating services deliver durable protection for your vehicle's paintwork.",
   desc2: "At Crystal Clean, we apply high-quality coatings from our Okehampton studio for vehicles across Devon.",  
-  thumbnailImage: "c1.png",
+  thumbnailImage: "/crystal-clean-ceramic-coating-banner.png",
+  thumbnailAlt: "Vehicle protected with ceramic coating by Crystal Clean",
 };
 
 export const serviceDetailData = {

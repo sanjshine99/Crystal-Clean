@@ -44,7 +44,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="whychoose"
-      className="bg-white dark:bg-[#0E0E0E] text-[#0E0E0E] dark:text-white py-24 px-6 md:px-12 transition-colors duration-300 overflow-hidden"
+      className="bg-white dark:bg-[#0E0E0E] text-[#0E0E0E] dark:text-white py-10 px-6 md:px-12 transition-colors duration-300 overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         {/* HEADER */}

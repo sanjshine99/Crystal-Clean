@@ -4,7 +4,7 @@ const ServiceBanner = ({ data }) => {
 
   if (!data) return null;
 
-  const { title, description, desc1, desc2, thumbnailImage } = data;
+  const { title, description, desc1, desc2, thumbnailImage, thumbnailAlt } = data;
 
   return (
     /* Background flips between White and Black */
@@ -20,7 +20,7 @@ const ServiceBanner = ({ data }) => {
             </span>
           </div>
           {/* Title flips between Black and White */}
-          <h1 className="text-5xl md:text-7xl font-bold text-black dark:text-white mb-8 tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-7xl font-bold text-black dark:text-white mb-8 tracking-tighter uppercase">
             {title}
           </h1>
           {/* Description flips between dark gray and light gray */}
@@ -39,8 +39,11 @@ const ServiceBanner = ({ data }) => {
         <div className="relative overflow-hidden rounded-sm w-full lg:w-[1200px] mx-auto shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-black/5 dark:border-white/5">
           <img
             src={thumbnailImage}
-            alt={title}
+            alt={thumbnailAlt || `${title} vehicle detailing service by Crystal Clean`}
             className="w-full h-[450px] rounded-xl object-cover transition-all duration-1000 grayscale-[0.2] hover:grayscale-0 hover:scale-105"
+            decoding="async"
+            loading="lazy"
+            fetchPriority="high"
           />
 
           {/* Subtle Gradient Overlay for Depth */}

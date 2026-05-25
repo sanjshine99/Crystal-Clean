@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { BUSINESS_DETAILS, SOCIAL_LINKS } from "../constants/businessInfo";
+import { ROUTES } from "../constants/routes";
 
 export default function FooterSection() {
   return (
@@ -33,11 +35,11 @@ export default function FooterSection() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/#" className="hover:text-[#13AFFE] transition">Home</a></li>
-              <li><a href="/#about" className="hover:text-[#13AFFE] transition">About Us</a></li>
-              <li><a href="/#whychoose" className="hover:text-[#13AFFE] transition">Why Choose</a></li>
-              <li><Link to="/#gallery" className="hover:text-[#13AFFE] transition">Gallery</Link></li>
-              <li><a href="/#contact" className="hover:text-[#13AFFE] transition">Contact</a></li>
+              <li><HashLink to="/#" className="hover:text-[#13AFFE] transition">Home</HashLink></li>
+              <li><HashLink to="/#about" className="hover:text-[#13AFFE] transition">About Us</HashLink></li>
+              <li><HashLink to="/#whychoose" className="hover:text-[#13AFFE] transition">Why Choose</HashLink></li>
+              <li><HashLink to="/#gallery" className="hover:text-[#13AFFE] transition">Gallery</HashLink></li>
+              <li><HashLink to="/#contact" className="hover:text-[#13AFFE] transition">Contact</HashLink></li>
             </ul>
           </div>
 
@@ -80,9 +82,9 @@ export default function FooterSection() {
           <p>&copy; {new Date().getFullYear()} {BUSINESS_DETAILS.name}. All rights reserved.</p>
           
           <div className="flex items-center gap-4">
-            <Link to="/terms" className="hover:text-[#13AFFE] transition">Terms & Conditions</Link>
+            <Link to={ROUTES.termsAndConditions} className="hover:text-[#13AFFE] transition">Terms & Conditions</Link>
             <span className="text-gray-700">|</span>
-            <Link to="/privacy" className="hover:text-[#13AFFE] transition">Privacy Policy</Link>
+            <Link to={ROUTES.privacyPolicy} className="hover:text-[#13AFFE] transition">Privacy Policy</Link>
           </div>
 
           <p className="font-semibold">

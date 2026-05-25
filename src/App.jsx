@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import React, { useEffect } from "react"; // 1. Import useEffect
 import AOS from "aos"; // 2. Import AOS
 import "aos/dist/aos.css"; // 3. Import AOS CSS
@@ -17,6 +17,7 @@ import ScrollToHash from "./components/ScrollToHash";
 import PaintProtectionFilmInstallation from "./page/Services/PaintProtectionFilmInstallation";
 import ReviewPage from "./page/ReviewPage";
 import CarDetailing from "./page/Services/CarDetailing";
+import { ROUTES } from "./constants/routes";
 
 
 function App() {
@@ -36,14 +37,17 @@ function App() {
       <ScrollToHash />
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/review" element={<ReviewPage /> } />
-        <Route path="/paint-protection-film-installation" element={<PaintProtectionFilmInstallation /> }/>
-        <Route path="/ceramic-coatings-exeter" element={<CeramicCoating /> } />
-        <Route path="/paint-correction-exeter" element={<Polishing /> } />
-        <Route path="/car-detailing-exeter" element={<CarDetailing />} />
-        <Route path="/terms" element={<TermsConditions />} />
-        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path={ROUTES.home} element={<Home />} />
+        <Route path={ROUTES.reviews} element={<ReviewPage /> } />
+        <Route path={ROUTES.paintProtectionFilm} element={<PaintProtectionFilmInstallation /> }/>
+        <Route path={ROUTES.ceramicCoating} element={<CeramicCoating /> } />
+        <Route path={ROUTES.paintCorrection} element={<Polishing /> } />
+        <Route path={ROUTES.carDetailing} element={<CarDetailing />} />
+        <Route path={ROUTES.termsAndConditions} element={<TermsConditions />} />
+        <Route path={ROUTES.privacyPolicy} element={<PrivacyPolicy />} />
+        <Route path="/review" element={<Navigate to={ROUTES.reviews} replace />} />
+        <Route path="/terms" element={<Navigate to={ROUTES.termsAndConditions} replace />} />
+        <Route path="/privacy" element={<Navigate to={ROUTES.privacyPolicy} replace />} />
       </Routes>
       <Footer />
       <GDPRConsent />

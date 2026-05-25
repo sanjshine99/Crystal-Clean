@@ -1,7 +1,7 @@
 export default function AboutSection() {
   return (
     <section 
-      className="relative w-full bg-[#0E0E0E] py-20 transition-colors duration-300" 
+      className="relative w-full bg-[#0E0E0E] py-5 transition-colors duration-300" 
       id="about"
     >
       <div className="relative max-w-7xl mx-auto px-4 md:px-0">
@@ -12,8 +12,8 @@ export default function AboutSection() {
             
         >
           <img
-            src="/im5.jpeg"
-            alt="Vehicle Detailing Professional"
+            src="/crystal-clean-about-detailing-team.jpeg"
+            alt="Crystal Clean vehicle detailing workspace and finished vehicle"
             className="
               w-full
               max-w-[900px]
@@ -23,6 +23,8 @@ export default function AboutSection() {
               object-cover
               transition-transform duration-700 hover:scale-105
             "
+            loading="lazy"
+            decoding="async"
           />
           {/* Subtle Blue overlay for branding */}
           <div className="absolute inset-0 bg-[#13AFFE]/10 pointer-events-none"></div>

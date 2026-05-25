@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send, Check } from 'lucide-react';
 import { BUSINESS_DETAILS } from "../constants/businessInfo";
 
@@ -9,15 +9,15 @@ export default function Contact() {
   // State for the multi-choice checklist
   const [selectedServices, setSelectedServices] = useState([]);
 
-  const toggleService = (service) => {
+  const toggleService = useCallback((service) => {
     setSelectedServices(prev =>
       prev.includes(service)
         ? prev.filter(s => s !== service)
         : [...prev, service]
     );
-  };
+  }, []);
 
-  const contactInfo = [
+  const contactInfo = useMemo(() => [
     {
       icon: <Phone className="h-5 w-5" />,
       title: 'Phone',
@@ -61,9 +61,9 @@ export default function Contact() {
         </div>
       ),
     },
-  ];
+  ], []);
 
-  const sendWhatsApp = (e) => {
+  const sendWhatsApp = useCallback((e) => {
     e.preventDefault();
 
     if (selectedServices.length === 0) {
@@ -91,10 +91,10 @@ Message: ${form.get("message")}`;
     setLoading(false);
     formRef.current.reset();
     setSelectedServices([]); // Clear the checklist after sending
-  };
+  }, [selectedServices]);
 
   return (
-    <section id="contact" className="py-24 scroll-m-10 bg-white dark:bg-[#0E0E0E] transition-colors duration-300">
+    <section id="contact" className="py-10 scroll-m-10 bg-white dark:bg-[#0E0E0E] transition-colors duration-300">
       <div className="container mx-auto px-4 max-w-7xl">
 
         {/* Heading */}

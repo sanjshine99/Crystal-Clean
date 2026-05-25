@@ -4,7 +4,8 @@ export const serviceBannerData = {
   title: "Professional Paint Protection Film Installation (PPF)",
   description: "Ultimate physical protection for your vehicle’s paintwork.",
   desc1: "Our certified PPF installation service provides an invisible shield against stone chips, scratches, and road debris, keeping your vehicle in pristine condition.",
-  thumbnailImage: "about.png",
+  thumbnailImage: "/crystal-clean-ppf-installation-banner.png",
+  thumbnailAlt: "Paint protection film installation in progress at Crystal Clean",
 };
 
 export const serviceDetailData = {

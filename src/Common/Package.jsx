@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiPhone, FiMail, FiMapPin, FiCheck, FiX } from "react-icons/fi";
 import { SiWhatsapp } from "react-icons/si";
 
@@ -18,6 +18,13 @@ function QuoteModal({ isOpen, onClose, packageName, services }) {
         time: "",
         info: "",
     });
+
+    useEffect(() => {
+        setForm((prev) => ({
+            ...prev,
+            service: packageName || "",
+        }));
+    }, [packageName]);
 
     if (!isOpen) return null;
 
@@ -216,9 +223,9 @@ export default function Package({ data }) {
                         <div>
                             <div className="flex items-center gap-3 mb-4">
                                 <div className="h-0.5 w-12" style={{ backgroundColor: brandBlue }}></div>
-                                <h6 className="text-xs sm:text-sm font-semibold uppercase tracking-wider" style={{ color: brandBlue }}>
+                                <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider" style={{ color: brandBlue }}>
                                     {displayDetail?.title}
-                                </h6>
+                                </p>
                             </div>
                             <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
                                 {displayDetail?.desc}
@@ -238,9 +245,9 @@ export default function Package({ data }) {
                                     <div className="flex items-center justify-center h-10 w-10 text-[#F5A623] group-hover:text-[#13AFFE] transition-colors duration-300">
                                         {iconMap[link.icon]}
                                     </div>
-                                    <h6 className="text-base font-semibold group-hover:text-[#13AFFE] transition-colors">
+                                    <p className="text-base font-semibold group-hover:text-[#13AFFE] transition-colors">
                                         {link.title}
-                                    </h6>
+                                    </p>
                                 </a>
                             ))}
                         </div>
@@ -254,7 +261,7 @@ export default function Package({ data }) {
                                 className="border border-black/5 dark:border-white/10 rounded-2xl p-6 sm:p-8 transition-all duration-500
                                 bg-white dark:bg-[#151515] hover:border-[#13AFFE]/40 shadow-sm hover:shadow-xl"
                             >
-                                <h6 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">{pkg.type}</h6>
+                                <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2">{pkg.type}</p>
                                 <div className="rounded-lg p-5 mb-6 bg-gray-100 dark:bg-[#0b0b0b]">
                                     <h3 className="text-4xl sm:text-5xl font-bold text-[#F5A623]">{pkg.price}</h3>
                                 </div>
@@ -277,7 +284,7 @@ export default function Package({ data }) {
 
                                 <button
                                     onClick={() => openModal(pkg.type)}
-                                    className="w-full block text-white font-bold py-4 rounded-full transition-all text-center hover:opacity-90 active:scale-95"
+                                    className="w-full block text-sm md:text-base text-white font-bold py-4 rounded-full transition-all text-center hover:opacity-90 active:scale-95"
                                     style={{ backgroundColor: brandBlue }}
                                 >
                                     {pkg.btnText}
@@ -291,7 +298,7 @@ export default function Package({ data }) {
             <QuoteModal
                 isOpen={modalOpen}
                 onClose={() => setModalOpen(false)}
-                packageName=""
+                packageName={selectedPackage}
                 services={allServices}
             />
         </>

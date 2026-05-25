@@ -2,7 +2,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <section className="w-full bg-black py-16 px-6 sm:py-24 sm:px-12 md:px-20 lg:px-32 transition-colors duration-500">
+    <section className="w-full bg-black py-10 px-6 sm:px-12 md:px-20 transition-colors duration-500">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
         
         {/* Text Content */}

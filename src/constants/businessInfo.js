@@ -3,6 +3,8 @@ import { FaTiktok, FaYoutube } from "react-icons/fa";
 
 export const BUSINESS_DETAILS = {
     name: "Crystal Clean",
+    siteUrl: "https://www.crystalcleanexeter.co.uk",
+    defaultMetaImage: "/crystal-clean-og-image.jpg",
     phone: "+44 7446 253967",
     phoneHref: "tel:+447446253967",
     email: "crystal.cl34n@gmail.com",

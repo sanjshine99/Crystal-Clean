@@ -45,7 +45,7 @@ export default function ServiceSection() {
     return (
         <section
             id="services"
-            className="relative scroll-m-10 bg-white dark:bg-[#0E0E0E] py-20 px-4 sm:px-6 overflow-hidden text-[#0E0E0E] dark:text-white transition-colors duration-300"
+            className="relative scroll-m-10 bg-white dark:bg-[#0E0E0E] py-10 px-4 sm:px-6 overflow-hidden text-[#0E0E0E] dark:text-white transition-colors duration-300"
         >
             {/* Background Accents */}
             <div className="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none">

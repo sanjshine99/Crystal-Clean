@@ -1,10 +1,16 @@
 
+import Seo from "./Seo";
 
 const PrivacyPolicy = () => {
     const brandBlue = '#13AFFE';
 
     return (
         <div className="mx-auto px-4 py-12 sm:px-6 lg:px-16 transition-colors duration-500 bg-white dark:bg-black text-black dark:text-white">
+            <Seo
+                title="Privacy Policy | Crystal Clean"
+                description="Read how Crystal Clean collects, uses, stores, and protects personal information for website enquiries and detailing bookings."
+                canonicalPath="/privacy-policy"
+            />
             <h1 className="text-4xl font-bold text-center mb-8 pt-20 uppercase tracking-tight">
                 Privacy Policy
             </h1>

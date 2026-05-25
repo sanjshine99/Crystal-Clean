@@ -1,10 +1,17 @@
 
+import Seo from "./Seo";
+
 const TermsConditions = () => {
   const brandBlue = '#13AFFE';
 
   return (
     <section className="bg-white dark:bg-black text-black dark:text-white mx-auto px-4 py-8 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
+        <Seo
+          title="Terms and Conditions | Crystal Clean"
+          description="Review Crystal Clean's website terms of use, intellectual property terms, privacy references, and contact information."
+          canonicalPath="/terms-and-conditions"
+        />
         <h1 className="text-3xl font-bold text-center mb-6 pt-20 uppercase tracking-tight">
           Website Terms of Use
         </h1>

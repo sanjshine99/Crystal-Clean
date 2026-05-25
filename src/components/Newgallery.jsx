@@ -1,20 +1,20 @@
-import { useState, useRef, useCallback } from "react";
+import { memo, useState, useRef, useCallback } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import  GALLERY_ITEMS from "../Data/newgallery"
 
 
 // ─── Media Renderer ──────────────────────────────────────────────────────────
-function Media({ src, type, alt, className }) {
+const Media = memo(function Media({ src, type, alt, className }) {
   if (type === "video") {
     return (
-      <video src={src} autoPlay loop muted playsInline className={className} />
+      <video src={src} autoPlay loop muted playsInline preload="metadata" className={className} />
     );
   }
-  return <img src={src} alt={alt} className={className} draggable={false} />;
-}
+  return <img src={src}  loading="lazy" alt={alt} className={className} draggable={false} loading="lazy" decoding="async" />;
+});
 
 // ─── Before/After Drag Slider ────────────────────────────────────────────────
-function BeforeAfterSlider({ beforeSrc, beforeMedia, afterSrc, afterMedia }) {
+function BeforeAfterSlider({ beforeSrc, beforeMedia, afterSrc, afterMedia, beforeAlt, afterAlt }) {
   const [pos, setPos] = useState(50);
   const containerRef = useRef(null);
   const dragging = useRef(false);
@@ -43,7 +43,7 @@ function BeforeAfterSlider({ beforeSrc, beforeMedia, afterSrc, afterMedia }) {
     >
       {/* AFTER — full background */}
       <div className="absolute inset-0">
-        <Media src={afterSrc} type={afterMedia} alt="After" className="w-full h-full object-cover" />
+        <Media src={afterSrc} type={afterMedia} alt={afterAlt} className="w-full h-full object-cover" />
         <span className="absolute bottom-3 right-3 text-xs font-bold px-2.5 py-1 rounded-full bg-[#13AFFE]/80 text-white tracking-widest uppercase">
           After
         </span>
@@ -54,7 +54,7 @@ function BeforeAfterSlider({ beforeSrc, beforeMedia, afterSrc, afterMedia }) {
         className="absolute inset-0 overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
       >
-        <Media src={beforeSrc} type={beforeMedia} alt="Before" className="w-full h-full object-cover" />
+        <Media src={beforeSrc} type={beforeMedia} alt={beforeAlt} className="w-full h-full object-cover" />
         <span className="absolute bottom-3 left-3 text-xs font-bold px-2.5 py-1 rounded-full bg-black/40 text-white tracking-widest uppercase backdrop-blur-sm">
           Before
         </span>
@@ -75,10 +75,10 @@ function BeforeAfterSlider({ beforeSrc, beforeMedia, afterSrc, afterMedia }) {
 }
 
 // ─── Single Media Card ───────────────────────────────────────────────────────
-function SingleCard({ src, media }) {
+function SingleCard({ src, media, alt }) {
   return (
     <div className="relative w-full h-full rounded-xl overflow-hidden">
-      <Media src={src} type={media} alt="Gallery" className="w-full h-full object-cover" />
+      <Media src={src} type={media} alt={alt} className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -99,7 +99,7 @@ export default function Gallery({ data }) {
   return (
     <section
       id="gallery"
-      className="scroll-m-10 py-20 px-4 sm:px-6 lg:px-12 bg-black text-white"
+      className="scroll-m-10 py-10 px-4 sm:px-6 lg:px-12 bg-black text-white"
     >
       <div className="max-w-5xl mx-auto">
 
@@ -136,9 +136,11 @@ export default function Gallery({ data }) {
                 beforeMedia={item.beforeMedia}
                 afterSrc={item.afterSrc}
                 afterMedia={item.afterMedia}
+                beforeAlt={item.beforeAlt}
+                afterAlt={item.afterAlt}
               />
             ) : (
-              <SingleCard src={item.src} media={item.media} />
+              <SingleCard src={item.src} media={item.media} alt={item.alt} />
             )}
           </div>
 

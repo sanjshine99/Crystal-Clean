@@ -5,6 +5,19 @@ import { Link, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 // Import the social links from your separate file
 import { SOCIAL_LINKS } from "../constants/businessInfo";
+import { ROUTES } from "../constants/routes";
+
+const SERVICES = [
+  { name: "Paint Protection Film Installation", path: ROUTES.paintProtectionFilm },
+  { name: "Ceramic Coating", path: ROUTES.ceramicCoating },
+  { name: "Paint Correction", path: ROUTES.paintCorrection },
+  { name: "Car Detailing", path: ROUTES.carDetailing },
+];
+
+const HOME_LINKS = [
+  { name: "About Us", path: "/#about" },
+  { name: "Why Choose", path: "/#whychoose" },
+];
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -50,18 +63,6 @@ export default function Navbar() {
     setMobileHomeOpen(false);
   };
 
-  const services = [
-    { name: "Paint Protection Film Installation", path: "/paint-protection-film-installation" },
-    { name: "Ceramic Coating", path: "/ceramic-coatings-exeter" },
-    { name: "Paint Correction", path: "/paint-correction-exeter" },
-    { name: "Car Detailing", path: "/car-detailing-exeter" },
-  ];
-
-  const homeLinks = [
-    { name: "About Us", path: "/#about" },
-    { name: "Why Choose", path: "/#whychoose" },
-  ];
-
   // Reusable Social Icons Component mapping from your imported data
   const SocialIcons = ({ className }) => (
     <div className={`flex items-center gap-4 ${className}`}>
@@ -95,9 +96,13 @@ export default function Navbar() {
           <Link to="/">
             <img
               src="/logo-white.png"
-              alt="Logo"
+              alt="Crystal Clean logo"
               className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${scrolled ? "dark:invert-0 invert" : "invert-0"
                 }`}
+              width="160"
+              height="64"
+              fetchPriority="high"
+               loading="lazy"
             />
           </Link>
         </div>
@@ -126,7 +131,7 @@ export default function Navbar() {
                 >
                   Home
                 </HashLink>
-                {homeLinks.map((item, index) => (
+                {HOME_LINKS.map((item, index) => (
                   <HashLink
                     key={index}
                     to={item.path}
@@ -152,7 +157,7 @@ export default function Navbar() {
 
             {showDropdown && (
               <div className="absolute left-0 top-full mt-4 bg-white dark:bg-[#1A1A1A] border border-gray-200 dark:border-white/10 rounded-xl shadow-2xl w-60 py-3 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2">
-                {services.map((item, index) => (
+                {SERVICES.map((item, index) => (
                   <Link
                     key={index}
                     to={item.path}
@@ -165,7 +170,7 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <HashLink to="/review" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
+          <HashLink to={ROUTES.reviews} className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
             Review
           </HashLink>
           <HashLink to="/#gallery" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">
@@ -220,7 +225,7 @@ export default function Navbar() {
               {mobileHomeOpen && (
                 <div className="pl-5 space-y-5 border-l-2 border-[#F5A623]">
                   <HashLink to="/#" className="block text-gray-600 dark:text-gray-400 font-semibold text-xl" onClick={handleMobileMenuClick}>Home</HashLink>
-                  {homeLinks.map((item, index) => (
+                  {HOME_LINKS.map((item, index) => (
                     <HashLink key={index} to={item.path} className="block text-gray-600 dark:text-gray-400 font-semibold text-xl" onClick={handleMobileMenuClick}>{item.name}</HashLink>
                   ))}
                 </div>
@@ -237,14 +242,14 @@ export default function Navbar() {
               </button>
               {mobileServicesOpen && (
                 <div className="pl-5 space-y-5 border-l-2 border-[#F5A623]">
-                  {services.map((item, index) => (
+                  {SERVICES.map((item, index) => (
                     <Link key={index} to={item.path} className="block text-gray-600 dark:text-gray-400 font-semibold text-xl" onClick={handleMobileMenuClick}>{item.name}</Link>
                   ))}
                 </div>
               )}
             </div>
 
-            <HashLink to="/review" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>Review</HashLink>
+            <HashLink to={ROUTES.reviews} className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>Review</HashLink>
             <HashLink to="/#gallery" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>Gallery</HashLink>
             <HashLink to="/#contact" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>Contact</HashLink>
           </nav>

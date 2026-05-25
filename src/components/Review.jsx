@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 export default function Review() {
@@ -59,7 +59,7 @@ export default function Review() {
                 setPhone('');
                 setSubmitted(false);
             }, 4000);
-        } catch (err) {
+        } catch {
             setError('Failed to send. Please try again.');
             setLoading(false);
         }

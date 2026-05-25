@@ -80,7 +80,7 @@ const TestimonialsSection = () => {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden bg-white dark:bg-[#0E0E0E] text-[#0E0E0E] dark:text-white py-24 px-6 md:px-12 transition-colors duration-300"
+      className="relative overflow-hidden bg-white dark:bg-[#0E0E0E] text-[#0E0E0E] dark:text-white py-10 px-6 md:px-12 transition-colors duration-300"
     >
       <div
         className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center mb-14"

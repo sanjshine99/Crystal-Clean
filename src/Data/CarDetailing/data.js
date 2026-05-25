@@ -5,7 +5,8 @@ export const serviceBannerData = {
   description: "Enhance, protect, and restore your vehicle with our professional detailing services.",
   desc1: "From precision exterior correction to meticulous interior refinement, we deliver showroom-quality results.",
   desc2: "Available at our studio or through our fully equipped mobile service.",
-  thumbnailImage: "d.png",
+  thumbnailImage: "/crystal-clean-car-detailing-banner.png",
+  thumbnailAlt: "Professional car detailing service by Crystal Clean",
 };
 
 export const serviceDetailData = {

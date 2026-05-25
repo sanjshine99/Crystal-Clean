@@ -3,7 +3,20 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
-import { SOCIAL_LINKS } from "../constants/businessInfo"; 
+import { SOCIAL_LINKS } from "../constants/businessInfo";
+import { ROUTES } from "../constants/routes";
+
+const SERVICES = [
+  { name: "Paint Protection Film Installation", path: ROUTES.paintProtectionFilm },
+  { name: "Ceramic Coating", path: ROUTES.ceramicCoating },
+  { name: "Polishing", path: ROUTES.paintCorrection },
+  { name: "Car Detailing", path: ROUTES.carDetailing },
+];
+
+const HOME_LINKS = [
+  { name: "About Us", path: "/#about" },
+  { name: "Why Choose", path: "/#whychoose" },
+];
 
 export default function ServiceNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +25,7 @@ export default function ServiceNavbar() {
   const [showHomeDropdown, setShowHomeDropdown] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileHomeOpen, setMobileHomeOpen] = useState(false);
-  
+
   const dropdownRef = useRef(null);
   const homeDropdownRef = useRef(null);
 
@@ -41,29 +54,17 @@ export default function ServiceNavbar() {
     setMobileHomeOpen(false);
   };
 
-  const services = [
-    { name: "Paint Protection Film Installation", path: "/paint-protection-film-installation" },
-    { name: "Ceramic Coating", path: "/ceramic-coatings-exeter" },
-    { name: "Polishing", path: "/paint-correction-exeter" },
-    { name: "Car Detailing", path: "/car-detailing-exeter" },
-  ];
-
-  const homeLinks = [
-    { name: "About Us", path: "/#about" },
-    { name: "Why Choose", path: "/#whychoose" },
-  ];
-
   // Social Links Component mapping from your external businessInfo data
   const SocialLinks = ({ className }) => (
     <div className={`flex items-center gap-4 ${className}`}>
       {SOCIAL_LINKS.map((social, index) => {
         const Icon = social.icon;
         return (
-          <a 
-            key={index} 
-            href={social.href} 
-            target="_blank" 
-            rel="noreferrer" 
+          <a
+            key={index}
+            href={social.href}
+            target="_blank"
+            rel="noreferrer"
             className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
           >
             <Icon size={social.name === "YouTube" ? 22 : 20} />
@@ -85,9 +86,13 @@ export default function ServiceNavbar() {
           <Link to="/">
             <img
               src="/logo-white.png"
-              alt="Logo"
+              alt="Crystal Clean logo"
               className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${scrolled ? "dark:invert-0 invert" : "invert-0"
                 }`}
+              width="160"
+              height="64"
+              fetchPriority="high"
+              loading="lazy"
             />
           </Link>
         </div>
@@ -101,7 +106,7 @@ export default function ServiceNavbar() {
             {showHomeDropdown && (
               <div className="absolute left-0 top-full mt-4 bg-white dark:bg-[#1A1A1A] border border-gray-200 dark:border-white/10 rounded-xl shadow-2xl w-52 py-3 z-50 overflow-hidden">
                 <HashLink to="/#" className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowHomeDropdown(false)}>Main Home</HashLink>
-                {homeLinks.map((link, i) => (
+                {HOME_LINKS.map((link, i) => (
                   <HashLink key={i} to={link.path} className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowHomeDropdown(false)}>{link.name}</HashLink>
                 ))}
               </div>
@@ -114,13 +119,13 @@ export default function ServiceNavbar() {
             </button>
             {showDropdown && (
               <div className="absolute left-0 top-full mt-4 bg-white dark:bg-[#1A1A1A] border border-gray-200 dark:border-white/10 rounded-xl shadow-2xl w-60 py-3 z-50 overflow-hidden">
-                {services.map((item, index) => (
+                {SERVICES.map((item, index) => (
                   <Link key={index} to={item.path} className="block px-6 py-3 text-sm font-semibold text-gray-700 dark:text-white hover:bg-[#F5A623]/10 hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors" onClick={() => setShowDropdown(false)}>{item.name}</Link>
                 ))}
               </div>
             )}
           </div>
-          <HashLink to="/review" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">Review</HashLink>
+          <HashLink to={ROUTES.reviews} className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">Review</HashLink>
           <HashLink to="/#gallery" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">Gallery</HashLink>
           <HashLink to="/#contact" className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors">Contact</HashLink>
         </nav>
@@ -128,7 +133,7 @@ export default function ServiceNavbar() {
         {/* Right Side Icons & CTA */}
         <div className="flex items-center gap-6">
           <SocialLinks className={`hidden xl:flex ${scrolled ? "text-gray-800 dark:text-white" : "text-white"}`} />
-          
+
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <div className="hidden xl:block">
@@ -157,7 +162,7 @@ export default function ServiceNavbar() {
               {mobileHomeOpen && (
                 <div className="pl-5 space-y-5 border-l-2 border-[#F5A623]">
                   <HashLink to="/#" className="block text-gray-600 dark:text-gray-400 font-semibold text-xl" onClick={handleMobileMenuClick}>Main Home</HashLink>
-                  {homeLinks.map((link, i) => (
+                  {HOME_LINKS.map((link, i) => (
                     <HashLink key={i} to={link.path} className="block text-gray-600 dark:text-gray-400 font-semibold text-xl" onClick={handleMobileMenuClick}>{link.name}</HashLink>
                   ))}
                 </div>
@@ -170,14 +175,14 @@ export default function ServiceNavbar() {
               </button>
               {mobileServicesOpen && (
                 <div className="pl-5 space-y-5 border-l-2 border-[#F5A623]">
-                  {services.map((item, index) => (
+                  {SERVICES.map((item, index) => (
                     <Link key={index} to={item.path} className="block text-gray-600 dark:text-gray-400 font-semibold text-xl" onClick={handleMobileMenuClick}>{item.name}</Link>
                   ))}
                 </div>
               )}
             </div>
 
-            <HashLink to="/review" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>
+            <HashLink to={ROUTES.reviews} className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>
               Review
             </HashLink>
             <HashLink to="/#gallery" className="text-2xl font-bold text-gray-900 dark:text-white" onClick={handleMobileMenuClick}>Gallery</HashLink>
