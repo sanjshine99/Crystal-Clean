@@ -23,7 +23,7 @@ const ServiceDetail = ({ data }) => {
             </span>
           </div>
           {/* Text flips between Black and White */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-8 tracking-tighter uppercase">
+          <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-8 tracking-tighter uppercase">
             {mainTitle}
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed max-w-3xl">
