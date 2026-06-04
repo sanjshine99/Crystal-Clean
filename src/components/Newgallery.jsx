@@ -10,7 +10,7 @@ const Media = memo(function Media({ src, type, alt, className }) {
       <video src={src} autoPlay loop muted playsInline preload="metadata" className={className} />
     );
   }
-  return <img src={src}  loading="lazy" alt={alt} className={className} draggable={false} loading="lazy" decoding="async" />;
+  return <img src={src} loading="lazy" alt={alt} className={className} draggable={false} decoding="async" />;
 });
 
 // ─── Before/After Drag Slider ────────────────────────────────────────────────

@@ -42,7 +42,7 @@ const ServiceBanner = ({ data }) => {
             alt={thumbnailAlt || `${title} vehicle detailing service by Crystal Clean`}
             className="w-full h-[450px] rounded-xl object-cover transition-all duration-1000 grayscale-[0.2] hover:grayscale-0 hover:scale-105"
             decoding="async"
-            loading="lazy"
+            loading="eager"
             fetchPriority="high"
           />
 
