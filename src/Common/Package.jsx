@@ -210,6 +210,11 @@ export default function Package({ data }) {
         setModalOpen(true);
     };
 
+    const handleContactNavigation = (event, href) => {
+        event.preventDefault();
+        window.location.href = href;
+    };
+
     return (
         <>
             <section
@@ -241,8 +246,7 @@ export default function Package({ data }) {
                                 <a
                                     key={index}
                                     href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    onClick={(event) => handleContactNavigation(event, link.href)}
                                     className="group flex items-center gap-4 border border-black/5 dark:border-white/10 rounded-xl p-4 bg-white dark:bg-[#111]/70 hover:shadow-md transition-all duration-300"
                                 >
                                     <div className="flex items-center justify-center h-10 w-10 text-[#F5A623] group-hover:text-[#13AFFE] transition-colors duration-300">
