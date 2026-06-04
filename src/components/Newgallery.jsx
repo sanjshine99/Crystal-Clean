@@ -112,7 +112,7 @@ export default function Gallery({ data }) {
             </span>
             <div className="h-0.5 w-10" style={{ backgroundColor: brandBlue }} />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#13AFFE]">Our <span className="text-[#F5A623]">Work</span></h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#13AFFE]">Our <span className="text-[#F5A623]">Work</span></h2>
           <p className="text-gray-400 mt-2 text-sm sm:text-base">{subtitle}</p>
         </div>
 

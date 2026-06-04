@@ -57,7 +57,7 @@ export default function ServiceSection() {
 
                 {/* Header */}
                 <div className="text-center mb-16" data-aos="fade-up">
-                    <h2 className="text-4xl sm:text-5xl text-[#13AFFE] lg:text-6xl font-black mb-4 uppercase tracking-tighter">
+                    <h2 className="text-4xl md:text-5xl text-[#13AFFE] font-black mb-4 uppercase tracking-tighter">
                         Our Specialised<span className="text-[#F5A623]"> Services</span> 
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto font-medium">

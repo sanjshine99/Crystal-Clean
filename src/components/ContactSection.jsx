@@ -99,7 +99,7 @@ Message: ${form.get("message")}`;
 
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black mb-4 text-[#13AFFE] uppercase italic">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 text-[#13AFFE] uppercase ">
             Get In <span className="text-black dark:text-[#F5A623]">Touch</span>
           </h2>
           <p className="text-lg md:text-xl max-w-2xl mx-auto text-gray-600 dark:text-gray-400 font-medium">
