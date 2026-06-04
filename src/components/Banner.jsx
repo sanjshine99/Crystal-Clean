@@ -2,23 +2,23 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <section className="w-full bg-black py-10 px-6 sm:px-12 md:px-20 transition-colors duration-500">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+    <section className="w-full bg-black py-10 px-6 sm:px-12 md:px-16 transition-colors duration-500">
+      <div className="max-w-7xl mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8 xl:gap-10">
         
         {/* Text Content */}
-        <h2 className="text-white text-4xl font-medium  max-w-xl">
+        <h2 className="text-white text-3xl md:text-4xl font-medium max-w-2xl">
          Returning your leased or rental car? <br className="hidden sm:block" />
          Call Crystal Clean for a spotless finish!
         </h2>
 
         {/* Button Group */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 xl:shrink-0">
           
           {/* Primary Button: Using #13AFFE */}
           <a
             href='/#contact'
             style={{ backgroundColor: '#13AFFE' }}
-            className="group relative text-white px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 hover:brightness-110 active:brightness-110 transition-all duration-300 w-full sm:w-auto shadow-lg shadow-[#13AFFE]/20"
+            className="group relative whitespace-nowrap text-white px-8 py-4 rounded-full font-medium text-lg flex items-center justify-center gap-2 hover:brightness-110 active:brightness-110 transition-all duration-300 w-full sm:w-auto sm:min-w-[180px] shadow-lg shadow-[#13AFFE]/20"
           >
             Get in touch
             <svg 
@@ -35,7 +35,7 @@ const Banner = () => {
           <a 
             href='/#services'
             style={{ borderColor: '#F5A623' }}
-            className="border-2 text-white px-8 py-4 rounded-full text-center font-medium text-lg hover:bg-[#F5A623] hover:text-black transition-all duration-300 w-full sm:w-auto"
+            className="border-2 whitespace-nowrap text-white px-8 py-4 rounded-full text-center font-medium text-lg hover:bg-[#F5A623] hover:text-black transition-all duration-300 w-full sm:w-auto sm:min-w-[180px]"
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#F5A623';
               e.currentTarget.style.color = '#000';
