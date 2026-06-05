@@ -10,7 +10,7 @@ const Media = memo(function Media({ src, type, alt, className }) {
       <video src={src} autoPlay loop muted playsInline preload="metadata" className={className} />
     );
   }
-  return <img src={src}  loading="lazy" alt={alt} className={className} draggable={false} loading="lazy" decoding="async" />;
+  return <img src={src} loading="lazy" alt={alt} className={className} draggable={false} decoding="async" />;
 });
 
 // ─── Before/After Drag Slider ────────────────────────────────────────────────
@@ -112,7 +112,7 @@ export default function Gallery({ data }) {
             </span>
             <div className="h-0.5 w-10" style={{ backgroundColor: brandBlue }} />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#13AFFE]">Our <span className="text-[#F5A623]">Work</span></h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#13AFFE]">Our <span className="text-[#F5A623]">Work</span></h2>
           <p className="text-gray-400 mt-2 text-sm sm:text-base">{subtitle}</p>
         </div>
 

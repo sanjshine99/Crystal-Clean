@@ -20,7 +20,7 @@ const ServiceBanner = ({ data }) => {
             </span>
           </div>
           {/* Title flips between Black and White */}
-          <h1 className="text-4xl md:text-7xl font-bold text-black dark:text-white mb-8 tracking-tighter uppercase">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-8 tracking-tighter uppercase">
             {title}
           </h1>
           {/* Description flips between dark gray and light gray */}
@@ -42,7 +42,7 @@ const ServiceBanner = ({ data }) => {
             alt={thumbnailAlt || `${title} vehicle detailing service by Crystal Clean`}
             className="w-full h-[450px] rounded-xl object-cover transition-all duration-1000 grayscale-[0.2] hover:grayscale-0 hover:scale-105"
             decoding="async"
-            loading="lazy"
+            loading="eager"
             fetchPriority="high"
           />
 

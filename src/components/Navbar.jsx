@@ -74,6 +74,7 @@ export default function Navbar() {
             href={social.href}
             target="_blank"
             rel="noreferrer"
+            aria-label={`Visit Crystal Clean on ${social.name}`}
             className="hover:text-[#13AFFE] dark:hover:text-[#F5A623] transition-colors"
           >
             <Icon size={social.name === "YouTube" ? 22 : 20} />
@@ -102,7 +103,7 @@ export default function Navbar() {
               width="160"
               height="64"
               fetchPriority="high"
-               loading="lazy"
+              loading="eager"
             />
           </Link>
         </div>

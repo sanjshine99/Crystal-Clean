@@ -66,7 +66,7 @@ export default function AboutSection() {
           {/* CONTENT */}
           <div className="lg:ml-6 pt-10 sm:pt-0">
             <h2 
-              className="text-3xl md:text-4xl font-black text-[#13AFFE] uppercase leading-tight mb-6"
+              className="text-4xl md:text-5xl font-black text-[#13AFFE] uppercase leading-tight mb-6"
        
             >
               ABOUT <span className="text-[#F5A623]">CRYSTAL CLEAN</span>

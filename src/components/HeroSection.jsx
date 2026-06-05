@@ -30,6 +30,8 @@ const HeroSection = () => {
           loop
           muted
           playsInline
+          preload="metadata"
+          aria-hidden="true"
           poster="/fall.png"
           onError={(e) => (e.currentTarget.style.display = "none")}
           className="w-full h-full object-cover"
@@ -100,7 +102,7 @@ const HeroSection = () => {
                 className="object-cover absolute inset-0 h-full w-full"
                 decoding="async"
                 fetchPriority="high"
-                loading="lazy"
+                loading="eager"
               />
             </div>
           </div>
